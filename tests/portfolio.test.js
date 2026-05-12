@@ -8,10 +8,9 @@ const requiredIds = ['home', 'about', 'competencies', 'experience', 'projects', 
 const requiredText = [
   'Tyler Cox',
   'Computer Science &amp; Engineering Student | Software Developer | Student Leader',
-  'CSE student building practical software, systems projects, and user-focused tools.',
+  'Computer Science &amp; Engineering student focused on software engineering, systems, and practical technical projects.',
   'The Ohio State University',
   'Stride Fitness Dashboard',
-  'Gymst / Fitness Tracking App Concept',
   'Relevant Coursework',
   'Software Components',
   'Tag Cloud Generator',
@@ -42,6 +41,10 @@ for (const text of requiredText) {
 
 if (html.includes('Tyl C')) {
   throw new Error('Found removed personal nickname in professional snapshot.');
+}
+
+if (html.includes('Gymst')) {
+  throw new Error('Found removed Gymst project content.');
 }
 
 if (!html.includes('mailto:Tyler.cox66@yahoo.com')) {

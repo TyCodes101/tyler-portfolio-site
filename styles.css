@@ -243,6 +243,29 @@ button {
   margin: 1.9rem 0 0;
 }
 
+.hero-icon-row {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(94, 234, 212, 0.18);
+  background: rgba(94, 234, 212, 0.06);
+  color: #dffcf8;
+}
+
+.icon-link svg {
+  width: 20px;
+  height: 20px;
+}
+
 .hero-badges {
   margin-top: 1.4rem;
 }
@@ -410,7 +433,20 @@ button {
 .coursework-panel {
   display: grid;
   gap: 1rem;
-  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.coursework-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.coursework-copy {
+  max-width: 32rem;
+  margin: 0;
+  color: var(--muted);
 }
 
 .projects-grid.two-up,
@@ -666,6 +702,7 @@ button:focus-visible {
   }
 
   .snapshot-list li,
+  .coursework-heading,
   .contact-item,
   .footer-shell,
   .experience-heading {
