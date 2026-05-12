@@ -8,9 +8,12 @@ const requiredIds = ['home', 'about', 'competencies', 'experience', 'projects', 
 const requiredText = [
   'Tyler Cox',
   'Computer Science &amp; Engineering Student | Software Developer | Student Leader',
-  'Computer Science student, student leader, and builder focused on practical technology.',
+  'CSE student building practical software, systems projects, and user-focused tools.',
   'The Ohio State University',
+  'Stride Fitness Dashboard',
   'Gymst / Fitness Tracking App Concept',
+  'Relevant Coursework',
+  'Software Components',
   'Tag Cloud Generator',
   'Word Counter',
   'MapReduce Word Count Lab',
@@ -35,6 +38,10 @@ for (const text of requiredText) {
   if (!html.includes(text)) {
     throw new Error(`Missing required text: ${text}`);
   }
+}
+
+if (html.includes('Tyl C')) {
+  throw new Error('Found removed personal nickname in professional snapshot.');
 }
 
 if (!html.includes('mailto:Tyler.cox66@yahoo.com')) {

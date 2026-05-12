@@ -407,6 +407,12 @@ button {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.coursework-panel {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
 .projects-grid.two-up,
 .experience-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -453,6 +459,18 @@ button {
   border-top: 1px solid rgba(148, 163, 184, 0.12);
 }
 
+.project-skills {
+  margin-top: 0.85rem;
+  color: var(--muted-strong);
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
 .featured-project {
   border-color: rgba(94, 234, 212, 0.28);
 }
@@ -490,6 +508,11 @@ button {
   transform: translateY(-1px);
 }
 
+.btn-small {
+  min-height: 42px;
+  padding: 0.72rem 1rem;
+}
+
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   color: var(--accent-ink);
@@ -505,6 +528,11 @@ button {
   border-color: rgba(94, 234, 212, 0.18);
   background: rgba(94, 234, 212, 0.06);
   color: #dffcf8;
+}
+
+.is-disabled {
+  opacity: 0.56;
+  pointer-events: none;
 }
 
 .resume-panel {
