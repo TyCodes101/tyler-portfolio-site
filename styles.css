@@ -214,7 +214,8 @@ button {
 .detail-list li,
 .contact-item span,
 .about-card p,
-.panel-copy {
+.panel-copy,
+.contact-intro {
   color: var(--muted);
 }
 
@@ -237,6 +238,10 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+}
+
+.hero-actions {
+  align-items: center;
 }
 
 .hero-actions {
@@ -408,9 +413,30 @@ button {
 .about-grid,
 .skills-grid,
 .projects-grid,
-.experience-grid {
+.experience-grid,
+.overview-grid {
   display: grid;
   gap: 1.25rem;
+}
+
+.quick-overview {
+  padding-top: 0.5rem;
+}
+
+.overview-grid.three-up {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.overview-card {
+  padding: 1.5rem;
+}
+
+.overview-card h3 {
+  margin-top: 0.45rem;
+}
+
+.overview-card p:last-child {
+  margin-bottom: 0;
 }
 
 .about-grid {
@@ -469,6 +495,18 @@ button {
   color: #e5fffa;
 }
 
+.project-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.chip-small {
+  padding: 0.38rem 0.68rem;
+  font-size: 0.85rem;
+}
+
 .project-card {
   position: relative;
   overflow: hidden;
@@ -523,7 +561,25 @@ button {
   margin: 0.25rem 0 0;
 }
 
+.experience-summary {
+  margin: 0.9rem 0 0.25rem;
+  color: var(--muted-strong);
+}
+
+.detail-list {
+  margin-top: 0.6rem;
+}
+
+.detail-list li::before {
+  content: '•';
+  color: var(--accent);
+  margin-right: 0.55rem;
+  flex: 0 0 auto;
+}
+
 .detail-list li {
+  display: flex;
+  align-items: flex-start;
   padding: 0.8rem 0;
   border-bottom: 1px solid rgba(148, 163, 184, 0.14);
 }
@@ -652,6 +708,7 @@ button:focus-visible {
   .contact-grid,
   .hero-stats,
   .about-grid,
+  .overview-grid.three-up,
   .skills-grid.four-up,
   .projects-grid.two-up,
   .experience-grid,
