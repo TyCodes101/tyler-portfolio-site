@@ -6,7 +6,7 @@ const html = fs.readFileSync(htmlPath, 'utf8');
 
 const requiredIds = ['home', 'about', 'competencies', 'experience', 'projects', 'resume', 'contact'];
 const requiredText = [
-  'Tyler Cx',
+  'Tyler Cox',
   'Computer Science student, student leader, and builder focused on practical technology',
   'Computer Science &amp; Engineering student, Resident Advisor, and aspiring software developer building useful tools with real-world purpose.',
   'The Ohio State University',
@@ -39,8 +39,12 @@ for (const text of requiredText) {
   }
 }
 
-if (!html.includes('Tyler Cx / Tyl C')) {
+if (!html.includes('Tyler Cox')) {
   throw new Error('Missing personal name styling in snapshot.');
+}
+
+if (html.includes('View Code') || html.includes('View Demo') || html.includes('Code Link Placeholder') || html.includes('Demo Placeholder')) {
+  throw new Error('Project placeholder code/demo buttons should be removed.');
 }
 
 if (!html.includes('Gymst')) {
