@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tyler Cox Resume</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: #d1d5db;
+      --accent: #0f766e;
+      --bg: #f8fafc;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.45;
+    }
+
+    .page {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+      background: var(--card);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 0.35rem;
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .contact {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+    }
+
+    .section {
+      margin-top: 1.35rem;
+      padding-top: 0.75rem;
+      border-top: 2px solid var(--line);
+    }
+
+    .section-title {
+      margin-bottom: 0.8rem;
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .org {
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .role {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .meta,
+    .date,
+    .degree {
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0.55rem 0 0 1.15rem;
+      padding: 0;
+    }
+
+    li + li {
+      margin-top: 0.32rem;
+    }
+
+    .competencies {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem 1rem;
+    }
+
+    .competency {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.85rem 0.95rem;
+      background: #fcfffe;
+    }
+
+    .competency strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      background: #fff;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .page {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .row,
+      .competencies {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="toolbar">
+      <a class="btn btn-primary" href="Tyler-Cox-Resume.pdf" target="_blank" rel="noreferrer">Download PDF</a>
+      <a class="btn" href="index.html">Back to Portfolio</a>
+    </div>
+
+    <header>
+      <h1>Tyler Cox</h1>
+      <p class="contact">Columbus, OH | 330-338-1232 | cox.1644@buckeyemail.osu.edu | github.com/TyCodes101</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="row">
+        <div>
+          <p class="org">The Ohio State University, Columbus, OH</p>
+          <p class="degree">B.S. Computer Science &amp; Engineering</p>
+        </div>
+        <p class="date">Expected May 2027</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <article>
+        <div class="row">
+          <div>
+            <p class="role">Resident Advisor (RA) | The Ohio State University</p>
+          </div>
+          <p class="date">Aug 2023 - Present</p>
+        </div>
+        <ul>
+          <li>Serve as a primary on-call responder, manage incidents, document reports accurately, and escalate safety concerns to senior staff.</li>
+          <li>Track attendance, maintain documentation, and assist with accountability processes aligned with university policies.</li>
+          <li>Support event logistics and coordinate operational coverage for a residence hall community of 400+ students.</li>
+          <li>Collaborate with Hall Directors, Resident Advisors, and Office Assistants to ensure smooth housing operations and communication across teams.</li>
+        </ul>
+      </article>
+
+      <article style="margin-top: 1rem;">
+        <div class="row">
+          <div>
+            <p class="role">Office Assistant | The Ohio State University Housing</p>
+          </div>
+          <p class="date">Sep 2022 - Present</p>
+        </div>
+        <ul>
+          <li>Maintain organized tracking systems for packages and administrative processes using Workday and Excel.</li>
+          <li>Support scheduling coordination, data entry, and reporting using Excel, Outlook, and Teams.</li>
+          <li>Assist with issue resolution, documentation accuracy, and appropriate escalation of operational concerns.</li>
+          <li>Provide professional front desk support while balancing multiple administrative responsibilities.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="competencies">
+        <div class="competency">
+          <strong>Staff Operations &amp; Accountability</strong>
+          Attendance tracking, documentation management, incident logging, escalation procedures.
+        </div>
+        <div class="competency">
+          <strong>Scheduling &amp; Administrative Systems</strong>
+          Excel scheduling tools, Outlook calendar coordination, Workday reporting.
+        </div>
+        <div class="competency">
+          <strong>On-Call Management</strong>
+          Incident response, communication protocol adherence, follow-up documentation.
+        </div>
+        <div class="competency">
+          <strong>Systems</strong>
+          Microsoft Excel, Outlook, Teams, Workday, StarRez (familiar), EMS (familiar).
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
