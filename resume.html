@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tyler Cox Resume</title>
   <style>
+    @page {
+      size: Letter;
+      margin: 0.45in;
+    }
+
     :root {
       color-scheme: light;
-      --text: #111827;
-      --muted: #4b5563;
-      --line: #d1d5db;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #cbd5e1;
       --accent: #0f766e;
       --bg: #f8fafc;
       --card: #ffffff;
@@ -20,42 +25,82 @@
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
+      font-size: 12px;
       color: var(--text);
       background: var(--bg);
-      line-height: 1.45;
+      line-height: 1.35;
     }
 
     .page {
-      width: min(100%, 900px);
+      width: min(100%, 8.5in);
       margin: 0 auto;
-      padding: 2rem 1.25rem 3rem;
+      padding: 0.45in 0.5in 0.55in;
       background: var(--card);
     }
 
-    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3, p { margin: 0; }
 
     h1 {
-      margin-bottom: 0.35rem;
-      font-size: 2rem;
+      font-size: 26px;
+      line-height: 1.05;
       letter-spacing: -0.04em;
     }
 
-    .contact {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0.65rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: white;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    header {
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .headline {
+      margin-top: 0.28rem;
       color: var(--muted);
-      margin-bottom: 1.5rem;
-      font-size: 0.98rem;
+      font-size: 12.5px;
+    }
+
+    .contact {
+      margin-top: 0.38rem;
+      color: var(--muted);
+      font-size: 11.5px;
     }
 
     .section {
-      margin-top: 1.35rem;
-      padding-top: 0.75rem;
-      border-top: 2px solid var(--line);
+      margin-top: 0.8rem;
     }
 
     .section-title {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.45rem;
       color: var(--accent);
-      font-size: 0.84rem;
+      font-size: 10.5px;
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -68,74 +113,59 @@
       align-items: baseline;
     }
 
-    .org {
+    .org,
+    .role,
+    .project-name {
       font-weight: 700;
-      margin-bottom: 0.15rem;
     }
 
-    .role {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .meta,
+    .degree,
     .date,
-    .degree {
+    .meta,
+    .summary,
+    .skills-copy {
       color: var(--muted);
     }
 
+    .summary {
+      margin-top: 0.42rem;
+    }
+
     ul {
-      margin: 0.55rem 0 0 1.15rem;
+      margin: 0.28rem 0 0 1rem;
       padding: 0;
     }
 
     li + li {
-      margin-top: 0.32rem;
+      margin-top: 0.16rem;
     }
 
-    .competencies {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.9rem 1rem;
-    }
-
-    .competency {
+    .skills-block {
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 0.85rem 0.95rem;
+      border-radius: 12px;
+      padding: 0.55rem 0.7rem;
       background: #fcfffe;
     }
 
-    .competency strong {
-      display: block;
-      margin-bottom: 0.25rem;
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem 0.7rem;
     }
 
-    .toolbar {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0.8rem 1rem;
-      border-radius: 999px;
+    .project-card {
       border: 1px solid var(--line);
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      background: #fff;
+      border-radius: 12px;
+      padding: 0.48rem 0.6rem;
+      background: #fcfffe;
     }
 
-    .btn-primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
+    .project-card p + p {
+      margin-top: 0.16rem;
+    }
+
+    article + article {
+      margin-top: 0.55rem;
     }
 
     @media print {
@@ -152,18 +182,13 @@
       .toolbar {
         display: none;
       }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 720px) {
       .row,
-      .competencies {
-        grid-template-columns: 1fr;
+      .project-grid {
         display: grid;
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -177,17 +202,28 @@
 
     <header>
       <h1>Tyler Cox</h1>
-      <p class="contact">Columbus, OH | 330-338-1232 | cox.1644@buckeyemail.osu.edu | github.com/TyCodes101</p>
+      <p class="headline">Computer Science &amp; Engineering Student | Software Developer | Student Leader</p>
+      <p class="contact">Columbus, Ohio | <a href="mailto:Tyler.cox66@yahoo.com">Tyler.cox66@yahoo.com</a> | <a href="https://www.linkedin.com/in/tyler-cox-53b886406">linkedin.com/in/tyler-cox-53b886406</a> | <a href="https://github.com/TyCodes101">github.com/TyCodes101</a></p>
+      <p class="summary">Computer Science &amp; Engineering student at The Ohio State University focused on practical software, systems-level programming, and technical problem solving. Leadership experience in OSU Housing has strengthened communication, documentation, accountability, and teamwork.</p>
     </header>
 
     <section class="section">
       <h2 class="section-title">Education</h2>
       <div class="row">
         <div>
-          <p class="org">The Ohio State University, Columbus, OH</p>
+          <p class="org">The Ohio State University, Columbus, Ohio</p>
           <p class="degree">B.S. Computer Science &amp; Engineering</p>
         </div>
-        <p class="date">Expected May 2027</p>
+        <p class="date">Expected Graduation: May 2027</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-block">
+        <p class="skills-copy"><strong>Languages:</strong> Java, Python, C, JavaScript, HTML, CSS</p>
+        <p class="skills-copy"><strong>Systems and tools:</strong> Linux, Git/GitHub, VS Code, Arduino IDE, Makefiles, pthreads</p>
+        <p class="skills-copy"><strong>Computer science:</strong> Data structures, algorithms, operating systems, embedded systems</p>
       </div>
     </section>
 
@@ -197,52 +233,58 @@
       <article>
         <div class="row">
           <div>
-            <p class="role">Resident Advisor (RA) | The Ohio State University</p>
+            <p class="role">Resident Advisor</p>
+            <p class="meta">The Ohio State University</p>
           </div>
-          <p class="date">Aug 2023 - Present</p>
         </div>
         <ul>
-          <li>Serve as a primary on-call responder, manage incidents, document reports accurately, and escalate safety concerns to senior staff.</li>
-          <li>Track attendance, maintain documentation, and assist with accountability processes aligned with university policies.</li>
-          <li>Support event logistics and coordinate operational coverage for a residence hall community of 400+ students.</li>
-          <li>Collaborate with Hall Directors, Resident Advisors, and Office Assistants to ensure smooth housing operations and communication across teams.</li>
+          <li>Support residents through communication, community building, and day-to-day problem solving.</li>
+          <li>Respond to concerns, document incidents clearly, and follow procedures when escalation is needed.</li>
+          <li>Strengthen leadership, teamwork, conflict resolution, and professional communication in a high-responsibility role.</li>
         </ul>
       </article>
 
-      <article style="margin-top: 1rem;">
+      <article>
         <div class="row">
           <div>
-            <p class="role">Office Assistant | The Ohio State University Housing</p>
+            <p class="role">Office Assistant</p>
+            <p class="meta">OSU Housing</p>
           </div>
-          <p class="date">Sep 2022 - Present</p>
         </div>
         <ul>
-          <li>Maintain organized tracking systems for packages and administrative processes using Workday and Excel.</li>
-          <li>Support scheduling coordination, data entry, and reporting using Excel, Outlook, and Teams.</li>
-          <li>Assist with issue resolution, documentation accuracy, and appropriate escalation of operational concerns.</li>
-          <li>Provide professional front desk support while balancing multiple administrative responsibilities.</li>
+          <li>Provide front desk support through phone, email, and in-person communication.</li>
+          <li>Assist with package tracking, scheduling, records, and administrative tasks using Workday, Excel, and Outlook.</li>
+          <li>Handle confidential information carefully while supporting students, families, and staff professionally.</li>
         </ul>
       </article>
     </section>
 
     <section class="section">
-      <h2 class="section-title">Core Competencies</h2>
-      <div class="competencies">
-        <div class="competency">
-          <strong>Staff Operations &amp; Accountability</strong>
-          Attendance tracking, documentation management, incident logging, escalation procedures.
+      <h2 class="section-title">Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <p class="project-name">Stride Fitness Dashboard</p>
+          <p class="meta">Responsive dashboard for calorie intake, activity, goal progress, fat-burn estimates, and weight trends.</p>
         </div>
-        <div class="competency">
-          <strong>Scheduling &amp; Administrative Systems</strong>
-          Excel scheduling tools, Outlook calendar coordination, Workday reporting.
+        <div class="project-card">
+          <p class="project-name">Tag Cloud Generator</p>
+          <p class="meta">Java program that processes text, counts word frequency, and generates an HTML tag cloud.</p>
         </div>
-        <div class="competency">
-          <strong>On-Call Management</strong>
-          Incident response, communication protocol adherence, follow-up documentation.
+        <div class="project-card">
+          <p class="project-name">Word Counter</p>
+          <p class="meta">Java project that reads text files, counts word occurrences, and outputs an organized HTML table.</p>
         </div>
-        <div class="competency">
-          <strong>Systems</strong>
-          Microsoft Excel, Outlook, Teams, Workday, StarRez (familiar), EMS (familiar).
+        <div class="project-card">
+          <p class="project-name">MapReduce Word Count Lab</p>
+          <p class="meta">C/Linux project using mapper and reducer threads, bounded buffers, hashing, and pthread synchronization.</p>
+        </div>
+        <div class="project-card">
+          <p class="project-name">ESP32 Alarm / Embedded Systems Project</p>
+          <p class="meta">Embedded system using an ESP32, display output, button and joystick input, and feedback hardware.</p>
+        </div>
+        <div class="project-card">
+          <p class="project-name">Sorting and Data Structures Projects</p>
+          <p class="meta">Java implementations of sorting, queues, stacks, linked lists, maps, sets, and recursive algorithms.</p>
         </div>
       </div>
     </section>
