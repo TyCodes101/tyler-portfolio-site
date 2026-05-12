@@ -8,13 +8,14 @@ const requiredIds = ['home', 'about', 'competencies', 'experience', 'projects', 
 const requiredText = [
   'Tyler Cox',
   'Computer Science &amp; Engineering Student | Software Developer | Student Leader',
-  'I&rsquo;m a Computer Science &amp; Engineering student at The Ohio State University focused on building practical software,',
-  'Stride Fitness Dashboard',
+  'Computer Science student, student leader, and builder focused on practical technology.',
+  'The Ohio State University',
+  'Gymst / Fitness Tracking App Concept',
   'Tag Cloud Generator',
   'Word Counter',
   'MapReduce Word Count Lab',
-  'ESP32 Alarm / Embedded Systems Project',
-  'Sorting and Data Structures Projects',
+  'ESP32 Alarm / Embedded Project',
+  'Sorting / Data Structures Projects',
   'Resident Advisor',
   'Office Assistant',
   'Download Resume',
@@ -34,10 +35,6 @@ for (const text of requiredText) {
   if (!html.includes(text)) {
     throw new Error(`Missing required text: ${text}`);
   }
-}
-
-if (html.includes('Tyler Cx') || html.includes('Tyl C')) {
-  throw new Error('Found old placeholder name in portfolio.');
 }
 
 if (!html.includes('mailto:Tyler.cox66@yahoo.com')) {

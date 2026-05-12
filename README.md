@@ -33,7 +33,7 @@ This site is static, so it works well with:
 - Netlify
 
 ## Contact info used on the site
-- Columbus, OH
-- 330-338-1232
-- cox.1644@buckeyemail.osu.edu
+- Columbus, Ohio
+- Tyler.cox66@yahoo.com
+- LinkedIn: `tyler-cox-53b886406`
 - GitHub: `TyCodes101`

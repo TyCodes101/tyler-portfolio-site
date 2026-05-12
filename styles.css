@@ -186,8 +186,8 @@ button {
 
 .hero-copy h1 {
   margin: 0.7rem 0 1rem;
-  max-width: 13ch;
-  font-size: clamp(3rem, 5.1vw, 5rem);
+  max-width: 12ch;
+  font-size: clamp(3rem, 5.2vw, 5.2rem);
 }
 
 .eyebrow,
@@ -273,7 +273,6 @@ button {
 }
 
 .stat-card strong,
-.timeline-card strong,
 .project-card h3,
 .skill-card h3,
 .experience-card h3,
@@ -392,7 +391,7 @@ button {
 }
 
 .about-grid {
-  grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1.35fr repeat(3, minmax(0, 1fr));
 }
 
 .about-card p:last-child,
@@ -400,16 +399,12 @@ button {
   margin-bottom: 0;
 }
 
-.about-lead {
-  grid-column: span 1;
-}
-
 .about-lead p + p {
   margin-top: 1rem;
 }
 
-.skills-grid.six-up {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.skills-grid.four-up {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .projects-grid.two-up,
@@ -593,7 +588,7 @@ button:focus-visible {
   .contact-grid,
   .hero-stats,
   .about-grid,
-  .skills-grid.six-up,
+  .skills-grid.four-up,
   .projects-grid.two-up,
   .experience-grid,
   .resume-panel {
