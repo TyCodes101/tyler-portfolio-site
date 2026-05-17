@@ -2,29 +2,37 @@ const fs = require('fs');
 const path = require('path');
 
 const htmlPath = path.join(__dirname, '..', 'index.html');
-const html = fs.readFileSync(htmlPath, 'utf8');
+const cssPath = path.join(__dirname, '..', 'styles.css');
+const jsPath = path.join(__dirname, '..', 'script.js');
 
-const requiredIds = ['home', 'about', 'competencies', 'experience', 'projects', 'resume', 'contact'];
+const html = fs.readFileSync(htmlPath, 'utf8');
+const css = fs.readFileSync(cssPath, 'utf8');
+const js = fs.readFileSync(jsPath, 'utf8');
+
+const requiredIds = ['home', 'work', 'skills', 'about', 'resume', 'contact'];
 const requiredText = [
   'Tyler Cox',
-  'Computer Science student, student leader, and builder focused on practical technology',
-  'Computer Science &amp; Engineering student, Resident Advisor, and aspiring software developer building useful tools with real-world purpose.',
+  'Software engineer · product-focused builder · AI/full-stack developer',
+  'I build polished real-world software products that feel clear, useful, and human.',
   'The Ohio State University',
-  'Gymst / Fitness Tracking App Concept',
-  'Relevant Coursework',
-  'Software Components',
-  'Tag Cloud Generator',
-  'Word Counter',
-  'MapReduce Word Count Lab',
-  'ESP32 Alarm / Embedded Project',
-  'Sorting / Data Structures Projects',
-  'Resident Advisor',
-  'Office Assistant',
-  'Resume',
+  'Calorie Compass',
+  'https://calorie-compass-chi.vercel.app/',
+  'https://github.com/TyCodes101/calorie-compass',
+  'Stride Fitness',
+  'JavaScript / TypeScript',
+  'React / Next.js',
+  'Node.js',
+  'Python',
+  'PostgreSQL',
+  'OpenAI APIs',
+  'UI/UX craft',
+  'Responsive design',
+  'Full-stack development',
+  'Tyler-Cox-Resume.pdf',
   'Tyler.cox66@yahoo.com',
   'linkedin.com/in/tyler-cox-53b886406',
   'github.com/TyCodes101',
-  'Columbus, Ohio'
+  'Columbus, OH'
 ];
 
 for (const id of requiredIds) {
@@ -39,28 +47,28 @@ for (const text of requiredText) {
   }
 }
 
-if (!html.includes('Tyler Cox')) {
-  throw new Error('Missing personal name styling in snapshot.');
+if (/placeholder|lorem ipsum|View Demo|View Code|Code Link Placeholder|Demo Placeholder/i.test(html)) {
+  throw new Error('Portfolio should not include generic placeholder/demo/code copy.');
 }
 
-if (html.includes('View Code') || html.includes('View Demo') || html.includes('Code Link Placeholder') || html.includes('Demo Placeholder')) {
-  throw new Error('Project placeholder code/demo buttons should be removed.');
+if (!html.includes('aria-label="Primary navigation"')) {
+  throw new Error('Missing accessible primary navigation label.');
 }
 
-if (!html.includes('Gymst')) {
-  throw new Error('Missing Gymst featured project content.');
+if (!html.includes('class="skip-link"')) {
+  throw new Error('Missing skip link for keyboard users.');
 }
 
-if (!html.includes('mailto:Tyler.cox66@yahoo.com')) {
-  throw new Error('Missing working mailto link.');
+if (!css.includes('@media (max-width: 760px)')) {
+  throw new Error('Missing mobile responsive breakpoint.');
 }
 
-if (!html.includes('https://www.linkedin.com/in/tyler-cox-53b886406')) {
-  throw new Error('Missing working LinkedIn link.');
+if (!css.includes('prefers-reduced-motion')) {
+  throw new Error('Missing reduced motion support.');
 }
 
-if (!html.includes('Interested in working together or learning more about my work? Feel free to reach out.')) {
-  throw new Error('Missing contact call to action.');
+if (!js.includes('IntersectionObserver')) {
+  throw new Error('Missing progressive reveal/nav observer behavior.');
 }
 
 console.log('Portfolio smoke test passed.');

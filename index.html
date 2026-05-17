@@ -3,38 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Tyler Cox is a Computer Science and Engineering student at The Ohio State University focused on software development, systems programming, student leadership, and practical projects."
-  />
-  <meta name="theme-color" content="#0c1420" />
-  <title>Tyler Cox | Computer Science & Engineering Portfolio</title>
+  <meta name="description" content="Tyler Cox is a software engineer and product-focused builder creating polished full-stack, AI, and mobile-first web experiences." />
+  <meta name="theme-color" content="#f7efe4" />
+  <title>Tyler Cox | Software Engineer & Product Builder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#mainContent">Skip to content</a>
 
-  <header class="site-header">
+  <header class="site-header" data-elevate>
     <div class="container nav-shell">
-      <a class="brand" href="#home" aria-label="Go to homepage">Tyler Cox<span class="brand-dot">.</span></a>
+      <a class="brand" href="#home" aria-label="Tyler Cox home">
+        <span class="brand-mark">TC</span>
+        <span>Tyler Cox</span>
+      </a>
 
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
       </button>
 
       <nav id="siteNav" class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
         <a href="#about">About</a>
-        <a href="#competencies">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -42,464 +36,250 @@
   </header>
 
   <main id="mainContent">
-    <!-- Hero: fast recruiter summary with clear actions -->
-    <section id="home" class="hero-section section-offset">
+    <section id="home" class="hero section-offset reveal">
+      <div class="ambient ambient-one" aria-hidden="true"></div>
+      <div class="ambient ambient-two" aria-hidden="true"></div>
+
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Computer Science student, student leader, and builder focused on practical technology</p>
-          <h1>Computer Science &amp; Engineering student, Resident Advisor, and aspiring software developer building useful tools with real-world purpose.</h1>
-          <p class="hero-subheadline">
-            I&rsquo;m Tyler Cox, a Computer Science &amp; Engineering student at The Ohio State University expected to graduate in May 2027.
-            I build a growing mix of Java, C, Python, embedded, and front-end projects while developing the habits and technical depth needed for software engineering internships.
-          </p>
-          <p class="hero-text">
-            My work in OSU Housing as a Resident Advisor and Office Assistant has shaped how I lead, communicate, document clearly, and stay dependable when people need support.
-            I care about practical software, fitness technology, consistency, and building things that genuinely help people.
+          <p class="eyebrow">Software engineer · product-focused builder · AI/full-stack developer</p>
+          <h1>I build polished real-world software products that feel clear, useful, and human.</h1>
+          <p class="hero-lede">
+            I’m Tyler Cox — a Computer Science & Engineering student at The Ohio State University building AI-powered, full-stack, and mobile-first experiences with strong UX instincts and a bias toward shipping.
           </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="Tyler-Cox-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-            <a class="btn btn-secondary" href="#projects">Projects</a>
-            <a class="btn btn-secondary" href="#contact">Contact</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/tyler-cox-53b886406" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn btn-secondary" href="https://github.com/TyCodes101" target="_blank" rel="noreferrer">GitHub</a>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="btn btn-primary" href="#work">View projects</a>
+            <a class="btn btn-secondary" href="Tyler-Cox-Resume.pdf" target="_blank" rel="noreferrer">Download resume</a>
+            <a class="btn btn-ghost" href="mailto:Tyler.cox66@yahoo.com">Contact me</a>
           </div>
 
-          <div class="hero-icon-row" aria-label="Social links">
-            <a class="icon-link" href="https://github.com/TyCodes101" target="_blank" rel="noreferrer" aria-label="GitHub profile">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.52.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.71 1.03 1.62 1.03 2.74 0 3.95-2.34 4.82-4.57 5.08.36.32.69.95.69 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z" fill="currentColor"/>
-              </svg>
-            </a>
-            <a class="icon-link" href="https://www.linkedin.com/in/tyler-cox-53b886406" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.38a1.56 1.56 0 0 1 0 3.12ZM8.3 18.5H5.58V9.66H8.3v8.84Zm10.12 0h-2.71v-4.3c0-1.03-.02-2.36-1.44-2.36-1.44 0-1.66 1.12-1.66 2.28v4.38H9.9V9.66h2.6v1.21h.04c.36-.69 1.25-1.43 2.58-1.43 2.76 0 3.27 1.82 3.27 4.18v4.88Z" fill="currentColor"/>
-              </svg>
-            </a>
-          </div>
-
-          <div class="hero-badges" aria-label="Quick highlights">
-            <span class="chip">OSU CSE</span>
-            <span class="chip">May 2027</span>
-            <span class="chip">Java, C, Python</span>
-            <span class="chip">Resident Advisor</span>
-            <span class="chip">Office Assistant</span>
-            <span class="chip">Open to Internships</span>
-          </div>
-
-          <div class="hero-stats" aria-label="Quick summary">
-            <article class="stat-card card">
-              <span class="stat-kicker">Technical focus</span>
-              <strong>Software engineering, systems, and embedded development</strong>
-              <p>Projects and coursework across programming, operating systems, low-level problem solving, and practical UI work.</p>
+          <div class="hero-proof" aria-label="Quick proof points">
+            <article>
+              <strong>01</strong>
+              <span>AI nutrition product live on Vercel</span>
             </article>
-            <article class="stat-card card">
-              <span class="stat-kicker">Professional strengths</span>
-              <strong>Communication, judgment, and reliability under responsibility</strong>
-              <p>Campus leadership roles strengthened my ability to document clearly, solve problems, and support people well.</p>
+            <article>
+              <strong>02</strong>
+              <span>Full-stack, UI/UX, and product thinking</span>
             </article>
-            <article class="stat-card card">
-              <span class="stat-kicker">Current goal</span>
-              <strong>Internships where I can build, learn, and ship</strong>
-              <p>I want to join technical teams where strong habits, real ownership, and growth mindset actually matter.</p>
+            <article>
+              <strong>03</strong>
+              <span>Open to software engineering internships</span>
             </article>
           </div>
         </div>
 
-        <!-- Side panel: concise personal snapshot for employers and quick sharing -->
-        <aside class="hero-panel card" aria-label="Professional snapshot">
-          <div class="profile-media-wrap">
-            <img class="profile-photo" src="assets/tyler-photo.png" alt="Tyler Cox smiling outdoors in a portrait photo" />
+        <aside class="hero-card glass-card" aria-label="Professional snapshot">
+          <div class="portrait-frame">
+            <img src="assets/tyler-photo.png" alt="Portrait of Tyler Cox" />
           </div>
-
-          <div class="panel-top">
-            <p class="panel-label">Professional Snapshot</p>
-            <h2>Dependable, growth-oriented, and serious about building both technical and leadership skills.</h2>
-            <p class="panel-copy">I&rsquo;m still early in my engineering career, but I already have experience balancing technical growth with people-facing campus leadership.</p>
+          <div>
+            <p class="card-kicker">Currently focused on</p>
+            <h2>Building products with thoughtful UX, reliable architecture, and practical AI.</h2>
+            <p>
+              I care about software that earns trust: fast interactions, helpful flows, clean interfaces, and features that solve actual user problems.
+            </p>
           </div>
-
-          <ul class="snapshot-list">
-            <li><strong>Name</strong><span>Tyler Cox</span></li>
-            <li><strong>School</strong><span>The Ohio State University</span></li>
-            <li><strong>Degree</strong><span>B.S. Computer Science &amp; Engineering</span></li>
-            <li><strong>Graduation</strong><span>May 2027</span></li>
-            <li><strong>Location</strong><span>Columbus, Ohio</span></li>
-            <li><strong>Email</strong><a href="mailto:Tyler.cox66@yahoo.com">Tyler.cox66@yahoo.com</a></li>
-            <li><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/tyler-cox-53b886406" target="_blank" rel="noreferrer">linkedin.com/in/tyler-cox-53b886406</a></li>
-            <li><strong>GitHub</strong><a href="https://github.com/TyCodes101" target="_blank" rel="noreferrer">github.com/TyCodes101</a></li>
-          </ul>
-
-          <div class="hero-mini-grid">
-            <div>
-              <span class="mini-label">Interests</span>
-              <strong>Software development, systems work, fitness technology, and useful tools</strong>
-            </div>
-            <div>
-              <span class="mini-label">Leadership style</span>
-              <strong>Steady, approachable, organized, and willing to help solve problems</strong>
-            </div>
-            <div>
-              <span class="mini-label">Current focus</span>
-              <strong>Building stronger project depth for software engineering and internship opportunities</strong>
-            </div>
+          <div class="snapshot-grid">
+            <span>OSU CSE</span>
+            <span>May 2027</span>
+            <span>Columbus, OH</span>
+            <span>Open to internships</span>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- Quick overview: helps recruiters get the story fast before deeper sections -->
-    <section class="section section-offset quick-overview" aria-label="Quick overview">
-      <div class="container">
-        <div class="section-heading narrow-heading">
-          <p class="section-tag">At a Glance</p>
-          <h2>A student developer with technical range, campus leadership experience, and a practical mindset.</h2>
-          <p class="section-subtitle">This section is a fast summary for recruiters, supervisors, and anyone opening the site for the first time.</p>
-        </div>
-
-        <div class="overview-grid three-up">
-          <article class="overview-card card">
-            <p class="mini-label">What I study</p>
-            <h3>Computer Science &amp; Engineering at Ohio State</h3>
-            <p>I am building a foundation in programming, data structures, systems, embedded work, and software problem solving.</p>
-          </article>
-
-          <article class="overview-card card">
-            <p class="mini-label">What I do</p>
-            <h3>Leadership and support through OSU Housing</h3>
-            <p>My campus roles developed communication, organization, professionalism, documentation, and trust under responsibility.</p>
-          </article>
-
-          <article class="overview-card card">
-            <p class="mini-label">What I want next</p>
-            <h3>Internship experience where I can build and grow</h3>
-            <p>I am looking for opportunities to contribute, learn from strong teams, and turn coursework into real engineering impact.</p>
-          </article>
-        </div>
+    <section class="logo-strip section-offset reveal" aria-label="Positioning highlights">
+      <div class="container strip-grid">
+        <span>AI integrations</span>
+        <span>Full-stack apps</span>
+        <span>Mobile-first UX</span>
+        <span>Product polish</span>
+        <span>Reliable delivery</span>
       </div>
     </section>
 
-    <!-- About: a little more personality without losing professionalism -->
-    <section id="about" class="section section-offset">
+    <section id="work" class="section section-offset reveal">
       <div class="container">
-        <div class="section-heading narrow-heading">
-          <p class="section-tag">About Me</p>
-          <h2>I&rsquo;m building a strong technical foundation while doing real leadership work on campus.</h2>
-          <p class="section-subtitle">I want to be technically sharp, dependable, easy to work with, and useful on a team from day one.</p>
+        <div class="section-heading">
+          <p class="section-tag">Featured Work</p>
+          <h2>Projects presented like products — with impact, craft, and clear next actions.</h2>
+          <p class="section-subtitle">A focused view of the work I want recruiters and technical reviewers to understand first.</p>
         </div>
 
-        <div class="about-grid">
-          <article class="about-card about-lead card">
-            <p>
-              I am a Computer Science &amp; Engineering student at The Ohio State University who enjoys building projects that solve real problems.
-              I like software that feels clear, useful, and well thought out, whether that means a Java project, a systems lab, a small front-end build, or an embedded device project.
-            </p>
-            <p>
-              Outside of technical coursework, I have worked as both a Resident Advisor and Office Assistant in OSU Housing. Those roles strengthened my leadership,
-              communication, documentation, customer service, organization, and ability to stay calm and dependable when people are counting on me.
-            </p>
-            <p>
-              I&rsquo;m still learning, and that is part of what motivates me. I want to keep growing into the kind of engineer who writes solid code, supports people well, and builds tools that are genuinely useful.
-            </p>
-          </article>
-
-          <article class="about-card card">
-            <p class="mini-label">Education</p>
-            <h3>OSU CSE student with broad technical exposure</h3>
-            <p>Coursework and project experience across software, operating systems, embedded systems, and core data structures.</p>
-          </article>
-
-          <article class="about-card card">
-            <p class="mini-label">Leadership</p>
-            <h3>Resident support, accountability, and communication</h3>
-            <p>Campus roles that developed judgment, professionalism, conflict response, and a people-first mindset.</p>
-          </article>
-
-          <article class="about-card card">
-            <p class="mini-label">Motivation</p>
-            <h3>Practical projects over empty polish</h3>
-            <p>I care about building things that are usable, understandable, and worth sharing with both recruiters and friends.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills: organized for scanning on desktop and mobile -->
-    <section id="competencies" class="section section-offset alt-section">
-      <div class="container">
-        <div class="section-heading narrow-heading">
-          <p class="section-tag">Skills</p>
-          <h2>Technical skills, systems exposure, tools, and people skills in one place.</h2>
-          <p class="section-subtitle">Everything here comes from coursework, projects, campus work, and day-to-day problem solving.</p>
-        </div>
-
-        <article class="coursework-panel card">
-          <div class="coursework-heading">
-            <div>
-              <p class="mini-label">Relevant Coursework</p>
-              <h3>Relevant Coursework</h3>
+        <div class="featured-project project-card glass-card">
+          <div class="project-visual calorie-visual" aria-hidden="true">
+            <div class="phone-mockup">
+              <div class="phone-bar"></div>
+              <div class="macro-ring">AI</div>
+              <div class="mock-line wide"></div>
+              <div class="mock-line"></div>
+              <div class="mock-row"><span></span><span></span><span></span></div>
+              <div class="assistant-bubble">“What size was the serving?”</div>
             </div>
-            <p class="coursework-copy">Core classes that support my software engineering, systems, and problem-solving foundation.</p>
           </div>
-          <ul class="pill-list">
-            <li>Software Components</li>
-            <li>Data Structures and Algorithms</li>
-            <li>Operating Systems</li>
-            <li>Digital Logic</li>
-            <li>Embedded Systems</li>
-            <li>Linear Algebra</li>
-            <li>Statistics</li>
-            <li>Object-Oriented Programming</li>
-            <li>Systems Programming</li>
-          </ul>
-        </article>
+          <div class="project-content">
+            <div class="project-title-row">
+              <p class="project-label">Featured · Live product</p>
+              <span class="status-pill">Deployed</span>
+            </div>
+            <h3>Calorie Compass</h3>
+            <p class="project-lede">
+              AI-powered nutrition tracking with conversational food logging, a trusted nutrition pipeline, polished mobile-first UX, and full-stack architecture.
+            </p>
+            <p>
+              Calorie Compass is built around the idea that logging food should feel natural instead of tedious. The product combines assistant-style meal entry, careful nutrition handling, and a clean dashboard experience designed for everyday use.
+            </p>
+            <div class="tag-row" aria-label="Calorie Compass technology stack">
+              <span>Next.js</span><span>React</span><span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>OpenAI APIs</span><span>Prisma</span><span>Vercel</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn btn-primary" href="https://calorie-compass-chi.vercel.app/" target="_blank" rel="noreferrer">Live demo</a>
+              <a class="btn btn-secondary" href="https://github.com/TyCodes101/calorie-compass" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </div>
+        </div>
 
-        <div class="skills-grid four-up">
-          <article class="skill-card card">
-            <h3>Programming</h3>
-            <ul class="pill-list">
+        <div class="project-grid">
+          <article class="project-card glass-card">
+            <div class="project-visual stride-visual" aria-hidden="true">
+              <div class="dashboard-card mini"><strong>Stride</strong><span>Fitness habits</span></div>
+              <div class="metric-stack"><span></span><span></span><span></span></div>
+            </div>
+            <div class="project-content">
+              <p class="project-label">Product concept</p>
+              <h3>Stride Fitness</h3>
+              <p>
+                A fitness and productivity experience focused on habit tracking, progress visibility, responsive UI, and helping users stay consistent without feeling overwhelmed.
+              </p>
+              <div class="tag-row"><span>UI/UX</span><span>Responsive design</span><span>Product thinking</span><span>Habit tracking</span></div>
+              <div class="project-actions">
+                <a class="btn btn-secondary" href="mailto:Tyler.cox66@yahoo.com?subject=Stride%20Fitness%20Project" aria-label="Ask Tyler about Stride Fitness">Ask about project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass-card future-card">
+            <div class="project-content">
+              <p class="project-label">Room for what ships next</p>
+              <h3>Next featured project</h3>
+              <p>
+                This slot is intentionally reserved for the next polished build: a full case study, strong screenshot, live link, GitHub link, and engineering story.
+              </p>
+              <div class="tag-row"><span>Case study ready</span><span>Expandable</span><span>Portfolio growth</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-offset reveal">
+      <div class="container">
+        <div class="section-heading narrow">
+          <p class="section-tag">Skills</p>
+          <h2>Organized by how I build — not a generic wall of logos.</h2>
+          <p class="section-subtitle">My strongest direction is full-stack product development with AI integrations and clean, responsive interfaces.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card glass-card emphasized">
+            <p class="card-kicker">Product engineering</p>
+            <h3>Full-stack development</h3>
+            <ul>
+              <li>React / Next.js</li>
+              <li>JavaScript / TypeScript</li>
+              <li>Node.js</li>
+              <li>PostgreSQL</li>
+              <li>Git / GitHub</li>
+            </ul>
+          </article>
+
+          <article class="skill-card glass-card emphasized">
+            <p class="card-kicker">AI + modern apps</p>
+            <h3>AI integrations</h3>
+            <ul>
+              <li>OpenAI APIs</li>
+              <li>Conversational UX</li>
+              <li>Structured assistant flows</li>
+              <li>Trusted data pipelines</li>
+            </ul>
+          </article>
+
+          <article class="skill-card glass-card">
+            <p class="card-kicker">Core programming</p>
+            <h3>Languages</h3>
+            <ul>
               <li>Java</li>
               <li>Python</li>
-              <li>C</li>
+              <li>HTML/CSS</li>
               <li>JavaScript</li>
-              <li>HTML</li>
-              <li>CSS</li>
+              <li>TypeScript</li>
             </ul>
           </article>
 
-          <article class="skill-card card">
-            <h3>Systems</h3>
-            <ul class="pill-list">
-              <li>Linux</li>
-              <li>Makefiles</li>
-              <li>pthreads</li>
-              <li>Processes</li>
-              <li>Scheduling</li>
-              <li>Synchronization</li>
-              <li>Operating Systems Concepts</li>
-            </ul>
-          </article>
-
-          <article class="skill-card card">
-            <h3>Tools</h3>
-            <ul class="pill-list">
-              <li>GitHub</li>
-              <li>VS Code</li>
-              <li>Arduino IDE</li>
-              <li>Microsoft Excel</li>
-              <li>Outlook</li>
-              <li>Workday</li>
-            </ul>
-          </article>
-
-          <article class="skill-card card">
-            <h3>Soft Skills</h3>
-            <ul class="pill-list">
-              <li>Leadership</li>
-              <li>Communication</li>
-              <li>Customer Service</li>
-              <li>Documentation</li>
-              <li>Teamwork</li>
-              <li>Problem Solving</li>
+          <article class="skill-card glass-card">
+            <p class="card-kicker">Experience quality</p>
+            <h3>UI/UX craft</h3>
+            <ul>
+              <li>Responsive design</li>
+              <li>Mobile-first layouts</li>
+              <li>Typography hierarchy</li>
+              <li>Accessibility basics</li>
+              <li>Clean interaction states</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Projects: lead with shipped work, then show concept and technical range -->
-    <section id="projects" class="section section-offset">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-tag">Projects</p>
-          <h2>Projects that show front-end execution, systems thinking, and readiness for internship-level work.</h2>
-          <p class="section-subtitle">Selected projects that highlight how I build, how I solve problems, and how I&rsquo;m developing as an engineer.</p>
+    <section id="about" class="section section-offset reveal">
+      <div class="container about-layout">
+        <div class="section-heading align-left">
+          <p class="section-tag">About Tyler</p>
+          <h2>Warm, dependable, and serious about becoming the kind of engineer teams trust.</h2>
         </div>
-
-        <div class="projects-grid two-up">
-          <article class="project-card card featured-project">
-            <p class="project-label">Featured Project Concept</p>
-            <h3>Gymst / Fitness Tracking App Concept</h3>
-            <div class="project-tag-row" aria-label="Gymst skill tags">
-              <span class="chip chip-small">Product thinking</span>
-              <span class="chip chip-small">Fitness tech</span>
-              <span class="chip chip-small">UX planning</span>
-            </div>
-            <p class="project-meta"><strong>Tech used:</strong> Product design, front-end planning, habit tracking features, mobile-friendly dashboard ideas</p>
-            <p>
-              Gymst is a fitness-focused app idea for busy college students and young adults. The concept centers on tracking hydration, steps,
-              calories burned, progress toward goals, and consistency over time in a way that feels simple enough to keep using.
-            </p>
-            <p class="project-skills"><strong>Key skills:</strong> feature planning, user-focused thinking, dashboard structure, product prioritization</p>
-            <p class="project-note"><strong>What it shows:</strong> I like building around real routines and practical habits, especially when technology can make healthy consistency easier.</p>
-          </article>
-
-          <article class="project-card card">
-            <p class="project-label">Java Project</p>
-            <h3>Tag Cloud Generator</h3>
-            <div class="project-tag-row" aria-label="Tag cloud skill tags">
-              <span class="chip chip-small">Java</span>
-              <span class="chip chip-small">File I/O</span>
-              <span class="chip chip-small">HTML output</span>
-            </div>
-            <p class="project-meta"><strong>Tech used:</strong> Java, file I/O, sorting, stop-word filtering, HTML output</p>
-            <p>Built a Java program that reads text, counts word frequencies, removes stop words, sorts results, and outputs an HTML tag cloud.</p>
-            <p class="project-skills"><strong>Key skills:</strong> file processing, sorting, data structures, HTML generation</p>
-            <p class="project-note"><strong>What it shows:</strong> File processing, structured output, and careful handling of data transformation from raw text to a readable result.</p>
-          </article>
-
-          <article class="project-card card">
-            <p class="project-label">Java Project</p>
-            <h3>Word Counter</h3>
-            <div class="project-tag-row" aria-label="Word counter skill tags">
-              <span class="chip chip-small">Java</span>
-              <span class="chip chip-small">Maps</span>
-              <span class="chip chip-small">Parsing</span>
-            </div>
-            <p class="project-meta"><strong>Tech used:</strong> Java, maps, string processing, HTML generation</p>
-            <p>Created a Java program that reads a text file, counts word occurrences, and creates an organized HTML table.</p>
-            <p class="project-skills"><strong>Key skills:</strong> map usage, string parsing, output formatting, data organization</p>
-            <p class="project-note"><strong>What it shows:</strong> Data organization, word-frequency analysis, and turning program output into something clean and readable.</p>
-          </article>
-
-          <article class="project-card card">
-            <p class="project-label">Systems Project</p>
-            <h3>MapReduce Word Count Lab</h3>
-            <div class="project-tag-row" aria-label="MapReduce skill tags">
-              <span class="chip chip-small">C</span>
-              <span class="chip chip-small">Linux</span>
-              <span class="chip chip-small">pthreads</span>
-            </div>
-            <p class="project-meta"><strong>Tech used:</strong> C, Linux, mapper and reducer threads, bounded buffers, hashing, pthread synchronization</p>
-            <p>Built a concurrent word count system using mapper and reducer threads, bounded buffers, hash-based partitioning, and thread synchronization.</p>
-            <p class="project-skills"><strong>Key skills:</strong> C programming, concurrency, synchronization, systems debugging</p>
-            <p class="project-note"><strong>What it shows:</strong> Systems thinking, concurrency fundamentals, debugging under constraints, and working closer to the operating system level.</p>
-          </article>
-
-          <article class="project-card card">
-            <p class="project-label">Embedded Systems Project</p>
-            <h3>ESP32 Alarm / Embedded Project</h3>
-            <div class="project-tag-row" aria-label="ESP32 skill tags">
-              <span class="chip chip-small">ESP32</span>
-              <span class="chip chip-small">Hardware I/O</span>
-              <span class="chip chip-small">Arduino IDE</span>
-            </div>
-            <p class="project-meta"><strong>Tech used:</strong> ESP32, LCD, joystick, buzzer, RGB LED, button, Wi-Fi, Arduino IDE</p>
-            <p>Developed an embedded project using ESP32 components such as an LCD, joystick, buzzer, RGB LED, button input, and Wi-Fi-related features.</p>
-            <p class="project-skills"><strong>Key skills:</strong> hardware integration, embedded logic, device I/O, iterative debugging</p>
-            <p class="project-note"><strong>What it shows:</strong> Hardware-software integration, managing multiple inputs and outputs, and thinking through interaction on a physical device.</p>
-          </article>
-
-          <article class="project-card card">
-            <p class="project-label">Coursework Collection</p>
-            <h3>Sorting / Data Structures Projects</h3>
-            <div class="project-tag-row" aria-label="Data structures skill tags">
-              <span class="chip chip-small">Algorithms</span>
-              <span class="chip chip-small">Recursion</span>
-              <span class="chip chip-small">Data structures</span>
-            </div>
-            <p class="project-meta"><strong>Tech used:</strong> Java, sorting machines, heapsort, queues, stacks, linked lists, maps, sets, recursion</p>
-            <p>Implemented sorting machines, heapsort, queues, stacks, linked lists, maps, sets, and recursive algorithms through Java coursework and practice projects.</p>
-            <p class="project-skills"><strong>Key skills:</strong> abstraction, recursion, algorithm design, data structure implementation</p>
-            <p class="project-note"><strong>What it shows:</strong> Stronger fundamentals in abstraction, data structure behavior, algorithmic thinking, and writing code that follows clear design rules.</p>
-          </article>
+        <div class="about-copy glass-card">
+          <p>
+            I’m studying Computer Science & Engineering at Ohio State and building projects that combine engineering fundamentals with product taste. I’m especially drawn to software that feels useful in daily life — fitness tools, nutrition experiences, AI assistants, and products that make complicated tasks feel simple.
+          </p>
+          <p>
+            My campus roles as a Resident Advisor and Office Assistant have shaped how I communicate, document, support people, and stay steady under responsibility. I bring that same mindset into technical work: be clear, be reliable, and keep improving the experience until it feels right.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Experience: present housing work as leadership plus operational professionalism -->
-    <section id="experience" class="section section-offset alt-section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-tag">Experience</p>
-          <h2>Professional experience that shows leadership, communication, and reliability.</h2>
-          <p class="section-subtitle">These roles show the communication, judgment, documentation, and reliability I bring to technical teams.</p>
-        </div>
-
-        <div class="experience-grid">
-          <article class="experience-card card">
-            <div class="experience-heading">
-              <div>
-                <h3>Resident Advisor</h3>
-                <p>The Ohio State University</p>
-              </div>
-              <span class="chip">2023 - Present</span>
-            </div>
-            <p class="experience-summary">High-trust student leadership role focused on support, accountability, crisis response, and community standards.</p>
-            <ul class="detail-list">
-              <li>Support residents through communication, community building, and everyday student problem solving.</li>
-              <li>Respond to incidents, document situations clearly, and follow procedures when escalation is needed.</li>
-              <li>Help maintain a safe, respectful, and supportive environment across a high-responsibility campus role.</li>
-              <li>Strengthened leadership, conflict response, communication, and trust-based student support skills.</li>
-            </ul>
-          </article>
-
-          <article class="experience-card card">
-            <div class="experience-heading">
-              <div>
-                <h3>Office Assistant</h3>
-                <p>OSU Housing</p>
-              </div>
-              <span class="chip">2022 - Present</span>
-            </div>
-            <p class="experience-summary">Operations and service role supporting front desk workflows, communication, and organized administrative work.</p>
-            <ul class="detail-list">
-              <li>Provide front desk customer service through phone, email, and in-person communication.</li>
-              <li>Assist with package and mail tracking, scheduling, records, and daily desk operations.</li>
-              <li>Use Workday, Excel, and Outlook to support organized administrative workflows.</li>
-              <li>Handle confidential information carefully while helping students, families, and staff professionally.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resume: simple placeholder section that can point to a future updated PDF -->
-    <section id="resume" class="section section-offset">
-      <div class="container resume-panel card">
+    <section id="resume" class="section section-offset reveal">
+      <div class="container resume-card glass-card">
         <div>
           <p class="section-tag">Resume</p>
-          <h2>Resume ready to share, and easy to replace later.</h2>
+          <h2>Make the next step easy.</h2>
           <p>
-            This section is ready for the latest version of my resume. When I update the PDF, the download button can stay the same,
-            so employers and recruiters always have one clear place to find it.
+            Recruiters and collaborators can quickly open my resume, review my work, or contact me directly.
           </p>
-          <div class="resume-link-row">
-            <a class="btn btn-primary" href="Tyler-Cox-Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
-            <a class="btn btn-secondary" href="resume.html" target="_blank" rel="noreferrer">Open Resume Page</a>
-          </div>
+        </div>
+        <div class="resume-actions">
+          <a class="btn btn-primary" href="Tyler-Cox-Resume.pdf" target="_blank" rel="noreferrer">Open resume PDF</a>
+          <a class="btn btn-secondary" href="resume.html">Web resume</a>
+          <a class="btn btn-ghost" href="https://github.com/TyCodes101" target="_blank" rel="noreferrer">GitHub profile</a>
         </div>
       </div>
     </section>
 
-    <!-- Contact: keep it direct and easy for recruiters to use -->
-    <section id="contact" class="section section-offset">
+    <section id="contact" class="section section-offset reveal">
       <div class="container contact-grid">
         <div>
           <p class="section-tag">Contact</p>
           <h2>Interested in working together or learning more about my work?</h2>
-          <p class="section-subtitle">
-            I&rsquo;m open to internships, software opportunities, project conversations, and professional connections.
-          </p>
+          <p class="section-subtitle">I’m open to software engineering internships, product-minded engineering roles, and conversations with people building useful software.</p>
         </div>
-
-        <div class="contact-card card">
-          <p class="contact-intro">Interested in working together or learning more about my work? Feel free to reach out.</p>
-          <a class="contact-item" href="mailto:Tyler.cox66@yahoo.com">
-            <span>Email</span>
-            <strong>Tyler.cox66@yahoo.com</strong>
-          </a>
-          <a class="contact-item" href="https://www.linkedin.com/in/tyler-cox-53b886406" target="_blank" rel="noreferrer">
-            <span>LinkedIn</span>
-            <strong>linkedin.com/in/tyler-cox-53b886406</strong>
-          </a>
-          <a class="contact-item" href="https://github.com/TyCodes101" target="_blank" rel="noreferrer">
-            <span>GitHub</span>
-            <strong>github.com/TyCodes101</strong>
-          </a>
-          <div class="contact-item static-item">
-            <span>Location</span>
-            <strong>Columbus, Ohio</strong>
-          </div>
+        <div class="contact-panel glass-card" aria-label="Contact links">
+          <a href="mailto:Tyler.cox66@yahoo.com"><span>Email</span><strong>Tyler.cox66@yahoo.com</strong></a>
+          <a href="https://www.linkedin.com/in/tyler-cox-53b886406" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/tyler-cox-53b886406</strong></a>
+          <a href="https://github.com/TyCodes101" target="_blank" rel="noreferrer"><span>GitHub</span><strong>github.com/TyCodes101</strong></a>
+          <a href="https://calorie-compass-chi.vercel.app/" target="_blank" rel="noreferrer"><span>Live product</span><strong>Calorie Compass</strong></a>
         </div>
       </div>
     </section>
@@ -507,11 +287,11 @@
 
   <footer class="site-footer">
     <div class="container footer-shell">
-      <p>&copy; <span id="footerYear"></span> Tyler Cox. Built with HTML, CSS, and JavaScript.</p>
-      <a href="#home">Back to top</a>
+      <p>© <span id="footerYear"></span> Tyler Cox. Built with care, clarity, and a product mindset.</p>
+      <a href="#home">Back to top ↑</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

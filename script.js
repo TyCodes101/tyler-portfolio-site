@@ -1,16 +1,15 @@
-// Main UI hooks for the mobile nav and active section indicator.
 const navToggle = document.getElementById('navToggle');
 const siteNav = document.getElementById('siteNav');
 const footerYear = document.getElementById('footerYear');
 const navLinks = Array.from(document.querySelectorAll('.site-nav a'));
 const observedSections = document.querySelectorAll('main section[id]');
+const revealEls = document.querySelectorAll('.reveal');
+const header = document.querySelector('[data-elevate]');
 
-// Keep the copyright year current.
 if (footerYear) {
   footerYear.textContent = new Date().getFullYear();
 }
 
-// Toggle the mobile menu and close it after a selection.
 if (navToggle && siteNav) {
   navToggle.addEventListener('click', () => {
     const isOpen = siteNav.classList.toggle('is-open');
@@ -24,11 +23,9 @@ if (navToggle && siteNav) {
     });
   });
 
-  // Close the open mobile menu if the visitor taps outside it.
   document.addEventListener('click', (event) => {
     const clickedInsideMenu = siteNav.contains(event.target);
     const clickedToggle = navToggle.contains(event.target);
-
     if (!clickedInsideMenu && !clickedToggle) {
       siteNav.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
@@ -36,27 +33,43 @@ if (navToggle && siteNav) {
   });
 }
 
-// Highlight the section currently in view.
+const elevateHeader = () => {
+  if (header) {
+    header.classList.toggle('is-elevated', window.scrollY > 12);
+  }
+};
+
+elevateHeader();
+window.addEventListener('scroll', elevateHeader, { passive: true });
+
 if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(
+  const navObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
+        if (!entry.isIntersecting) return;
         const currentId = entry.target.id;
         navLinks.forEach((link) => {
-          const isMatch = link.getAttribute('href') === `#${currentId}`;
-          link.classList.toggle('is-active', isMatch);
+          link.classList.toggle('is-active', link.getAttribute('href') === `#${currentId}`);
         });
       });
     },
-    {
-      rootMargin: '-35% 0px -50% 0px',
-      threshold: 0.1
-    }
+    { rootMargin: '-38% 0px -52% 0px', threshold: 0.1 }
   );
 
-  observedSections.forEach((section) => observer.observe(section));
+  observedSections.forEach((section) => navObserver.observe(section));
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add('is-visible'));
 }
