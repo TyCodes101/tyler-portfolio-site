@@ -38,17 +38,18 @@ for (const text of requiredPortfolioText) {
 }
 
 const requiredResumeText = [
-  'AI Product Engineer · Full Stack Developer · Product-focused Software Engineer',
-  'GPA: 3.1',
-  'Expected graduation: May 2027',
-  'Seeking software engineering internships',
-  'Built and deployed a full-stack nutrition tracking app',
-  'Designed user flows for natural food entry',
-  'trust-focused nutrition presentation',
+  'AI Product Engineer · Software Engineering Intern · Full-Stack Product Builder',
+  'GPA 3.1',
+  'Expected May 2027',
+  'Strong fit for software engineering',
+  'Built and deployed a full-stack nutrition app',
+  'Designed an AI assistant flow',
+  'trust-focused nutrition pipeline',
   'Download ATS-friendly PDF resume',
   'Resident Advisor',
+  'Aug 2023 – Present',
   'Office Assistant',
-  'operations',
+  'Sept 2022 – Present',
   'documentation',
 ];
 
