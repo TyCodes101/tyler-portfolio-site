@@ -15,7 +15,7 @@ const skillGroups = [
   },
   {
     label: "AI + Tools",
-    skills: ["OpenAI APIs", "Intent classification", "Conversational UX", "Git/GitHub", "Vercel"],
+    skills: ["OpenAI APIs", "Intent handling", "Structured outputs", "Git/GitHub", "Vercel"],
   },
 ];
 
@@ -28,9 +28,10 @@ const projects = [
     href: "https://calorie-compass-chi.vercel.app/",
     bullets: [
       "Shipped a full-stack nutrition app with conversational meal logging, macro dashboards, and production deployment on Vercel.",
-      "Built multi-step meal interactions for ambiguous food entries, serving-size clarification, corrections, and follow-up questions.",
-      "Created a trust-focused nutrition system that separates verified food data from AI-estimated values so users can judge confidence quickly.",
-      "Iterated on mobile-first logging flows, dashboard hierarchy, and feedback states to make food entry feel faster and less robotic.",
+      "Implemented stateful meal interactions supporting corrections, quantity updates, and clarification recovery across active conversations.",
+      "Built structured intent handling for food entries so the assistant can distinguish logging, editing, clarification, and correction requests.",
+      "Created a trust-focused nutrition pipeline that separates verified food data from AI-estimated values for faster confidence checks.",
+      "Refined mobile-first logging flows through repeated UX iteration across dashboard hierarchy, feedback states, and meal-entry friction.",
     ],
   },
   {
