@@ -1,74 +1,69 @@
 const fs = require('fs');
 const path = require('path');
 
-const htmlPath = path.join(__dirname, '..', 'index.html');
-const cssPath = path.join(__dirname, '..', 'styles.css');
-const jsPath = path.join(__dirname, '..', 'script.js');
+const root = path.join(__dirname, '..');
+const page = fs.readFileSync(path.join(root, 'src/app/page.tsx'), 'utf8');
+const resume = fs.readFileSync(path.join(root, 'src/app/resume/page.tsx'), 'utf8');
+const layout = fs.readFileSync(path.join(root, 'src/app/layout.tsx'), 'utf8');
+const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
 
-const html = fs.readFileSync(htmlPath, 'utf8');
-const css = fs.readFileSync(cssPath, 'utf8');
-const js = fs.readFileSync(jsPath, 'utf8');
-
-const requiredIds = ['home', 'work', 'skills', 'about', 'resume', 'contact'];
-const requiredText = [
-  'Tyler Cox',
-  'Software engineer · product-focused builder · AI/full-stack developer',
-  'I build polished real-world software products that feel clear, useful, and human.',
-  'The Ohio State University',
+const requiredPortfolioText = [
+  'AI Product Engineer',
+  'Full Stack Product Builder',
+  'Building AI-powered apps that feel human.',
+  'Ohio State Computer Science & Engineering',
+  'conversational AI systems',
+  'polished consumer experiences',
+  'production-ready software',
   'Calorie Compass',
   'https://calorie-compass-chi.vercel.app/',
   'https://github.com/TyCodes101/calorie-compass',
+  'Most calorie trackers feel robotic, tedious, and disconnected from natural conversation.',
+  'Correction-aware assistant',
+  'Verified vs estimated trust system',
+  'AI intent classification',
+  'Intelligent nutrition reconciliation',
   'Stride Fitness',
-  'JavaScript / TypeScript',
-  'React / Next.js',
-  'Node.js',
-  'Python',
-  'PostgreSQL',
-  'OpenAI APIs',
-  'UI/UX craft',
-  'Responsive design',
-  'Full-stack development',
-  'Tyler-Cox-Resume.pdf',
+  'https://stride-step-tracker-tyler-cox-s-projects1.vercel.app/',
+  'Currently Building',
+  'Engineering credibility',
+  '3.1 GPA',
+  'Graduating May 2027',
   'Tyler.cox66@yahoo.com',
   'linkedin.com/in/tyler-cox-53b886406',
-  'github.com/TyCodes101',
-  'Columbus, OH'
 ];
 
-for (const id of requiredIds) {
-  if (!html.includes(`id="${id}"`)) {
-    throw new Error(`Missing required section: ${id}`);
-  }
+for (const text of requiredPortfolioText) {
+  if (!page.includes(text)) throw new Error(`Missing portfolio text: ${text}`);
 }
 
-for (const text of requiredText) {
-  if (!html.includes(text)) {
-    throw new Error(`Missing required text: ${text}`);
-  }
+const requiredResumeText = [
+  'AI Product Engineer · Full Stack Developer · Product-focused Software Engineer',
+  'GPA: 3.1',
+  'Expected graduation: May 2027',
+  'Built an AI-powered conversational nutrition tracking platform',
+  'Designed a correction-aware conversational assistant',
+  'trusted nutrition reconciliation pipelines',
+  'Resident Advisor',
+  'Office Assistant',
+  'operations',
+  'documentation',
+];
+
+for (const text of requiredResumeText) {
+  if (!resume.includes(text)) throw new Error(`Missing resume text: ${text}`);
 }
 
-if (/placeholder|lorem ipsum|View Demo|View Code|Code Link Placeholder|Demo Placeholder/i.test(html)) {
-  throw new Error('Portfolio should not include generic placeholder/demo/code copy.');
+if (!pkg.dependencies?.next || !pkg.dependencies?.react || !pkg.devDependencies?.tailwindcss) {
+  throw new Error('Expected Next.js, React, and Tailwind dependencies.');
 }
 
-if (!html.includes('aria-label="Primary navigation"')) {
-  throw new Error('Missing accessible primary navigation label.');
+if (!layout.includes('AI Product Engineer & Full Stack Product Builder')) {
+  throw new Error('Missing product-engineer metadata.');
 }
 
-if (!html.includes('class="skip-link"')) {
-  throw new Error('Missing skip link for keyboard users.');
+if (/placeholder|lorem ipsum|Create Next App|Deploy Now/i.test(page + resume)) {
+  throw new Error('Found generic placeholder copy.');
 }
 
-if (!css.includes('@media (max-width: 760px)')) {
-  throw new Error('Missing mobile responsive breakpoint.');
-}
-
-if (!css.includes('prefers-reduced-motion')) {
-  throw new Error('Missing reduced motion support.');
-}
-
-if (!js.includes('IntersectionObserver')) {
-  throw new Error('Missing progressive reveal/nav observer behavior.');
-}
-
-console.log('Portfolio smoke test passed.');
+console.log('Portfolio brand overhaul smoke test passed.');

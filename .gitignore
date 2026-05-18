@@ -1,2 +1,7 @@
-site-preview.png
 .vercel
+node_modules
+.next
+out
+.env*
+!.env.example
+.DS_Store
