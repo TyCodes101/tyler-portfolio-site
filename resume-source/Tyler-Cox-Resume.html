@@ -4,27 +4,33 @@
   <meta charset="utf-8" />
   <title>Tyler Cox Resume</title>
   <style>
-    @page { size: Letter; margin: 0.5in; }
+    @page { size: Letter; margin: 0.54in 0.52in; }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       color: #000;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 10.4px;
-      line-height: 1.28;
+      font-size: 10.25px;
+      line-height: 1.3;
       background: #fff;
     }
     h1, h2, h3, p { margin: 0; }
     a { color: #000; text-decoration: none; }
-    .header { text-align: center; margin-bottom: 8px; }
-    h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 23px; letter-spacing: .2px; line-height: 1; font-weight: 700; }
-    .contact { margin-top: 4px; font-size: 9.4px; line-height: 1.25; }
-    .target { margin-top: 4px; font-size: 10.2px; font-weight: 700; }
-    .section { margin-top: 7px; break-inside: avoid; }
+    .header { text-align: center; margin-bottom: 9px; }
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px;
+      letter-spacing: .2px;
+      line-height: 1;
+      font-weight: 700;
+    }
+    .contact { margin-top: 4px; font-size: 9.25px; line-height: 1.28; }
+    .target { margin-top: 4px; font-size: 10.1px; font-weight: 700; }
+    .section { margin-top: 8px; break-inside: avoid; }
     h2 {
       font-size: 10.5px;
       line-height: 1.1;
-      letter-spacing: .7px;
+      letter-spacing: .8px;
       text-transform: uppercase;
       border-bottom: 1px solid #000;
       padding-bottom: 2px;
@@ -32,13 +38,13 @@
       font-weight: 700;
     }
     .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
-    .item { margin-top: 5px; break-inside: avoid; }
+    .item { margin-top: 6px; break-inside: avoid; }
     .item:first-child { margin-top: 0; }
-    .title { font-weight: 700; font-size: 10.5px; }
-    .meta { font-style: italic; font-size: 9.5px; margin-top: 1px; }
-    .date { white-space: nowrap; font-size: 9.6px; font-weight: 700; }
-    ul { margin: 2px 0 0 14px; padding: 0; }
-    li { margin: 1.6px 0; padding-left: 1px; }
+    .title { font-weight: 700; font-size: 10.55px; }
+    .meta { font-style: italic; font-size: 9.4px; margin-top: 1px; }
+    .date { white-space: nowrap; font-size: 9.5px; font-weight: 700; }
+    ul { margin: 2.5px 0 0 14px; padding: 0; }
+    li { margin: 1.8px 0; padding-left: 1px; }
     .skills p { margin-top: 2px; }
     .label { font-weight: 700; }
     .summary { margin-top: 2px; }
@@ -48,8 +54,13 @@
   <header class="header">
     <h1>Tyler Cox</h1>
     <p class="contact">Columbus, OH | Tyler.cox66@yahoo.com | linkedin.com/in/tyler-cox-53b886406 | github.com/TyCodes101 | tyler-portfolio-site.vercel.app</p>
-    <p class="target">Software Engineering Intern | AI Product Engineer | Full-Stack Developer</p>
+    <p class="target">Software Engineering Intern | Full-Stack Developer | AI Product Engineer</p>
   </header>
+
+  <section class="section">
+    <h2>Summary</h2>
+    <p class="summary">Computer Science student at Ohio State who builds and deploys real web products. Strongest in React/Next.js, full-stack JavaScript, conversational AI, and polished user-facing workflows.</p>
+  </section>
 
   <section class="section">
     <h2>Education</h2>
@@ -62,38 +73,38 @@
 
   <section class="section skills">
     <h2>Technical Skills</h2>
-    <p><span class="label">Languages:</span> TypeScript, JavaScript, Python, Java, SQL, HTML, CSS</p>
-    <p><span class="label">Frontend:</span> React, Next.js, Tailwind CSS, responsive design, mobile-first UI, accessibility basics, UI/UX systems</p>
-    <p><span class="label">Backend & Data:</span> Node.js, PostgreSQL, Prisma, REST APIs, full-stack architecture, data modeling</p>
-    <p><span class="label">AI & Product Engineering:</span> OpenAI APIs, LLM integration, prompt engineering, intent classification, conversational UX, structured outputs, AI-assisted workflows</p>
-    <p><span class="label">Tools & Deployment:</span> Git, GitHub, Vercel, CI/CD workflows, testing, debugging, Chrome DevTools, Excel, Outlook, Workday</p>
+    <p><span class="label">Languages:</span> TypeScript, JavaScript, Python, Java, SQL, HTML/CSS</p>
+    <p><span class="label">Frontend:</span> React, Next.js, Tailwind CSS, responsive UI, mobile-first interfaces</p>
+    <p><span class="label">Backend & Data:</span> Node.js, PostgreSQL, Prisma, REST APIs, full-stack architecture</p>
+    <p><span class="label">AI/Product:</span> OpenAI APIs, LLM integration, intent classification, conversational UX, structured outputs</p>
+    <p><span class="label">Tools:</span> Git, GitHub, Vercel, CI/CD, testing, debugging, Chrome DevTools, Excel, Outlook, Workday</p>
   </section>
 
   <section class="section">
     <h2>Projects</h2>
     <div class="item">
       <div class="row">
-        <p class="title">Calorie Compass — AI-Powered Calorie and Macro Tracking Platform</p>
+        <p class="title">Calorie Compass — AI Calorie & Macro Tracking Platform</p>
         <p class="date">Production App</p>
       </div>
       <p class="meta">Next.js, React, TypeScript, PostgreSQL, Prisma, OpenAI APIs, Vercel | calorie-compass-chi.vercel.app</p>
       <ul>
-        <li>Built and deployed a full-stack nutrition tracking app with conversational meal logging, macro tracking, responsive dashboards, and a mobile-first product experience.</li>
-        <li>Designed AI assistant behavior for natural food entry, intent classification, serving-size clarification, correction handling, and context-aware follow-up questions.</li>
-        <li>Implemented a trust-focused nutrition pipeline that separates verified food data from estimated AI-assisted values to improve transparency and user confidence.</li>
-        <li>Developed user-facing flows across frontend UI, backend data models, AI API integration, deployment configuration, and production iteration workflows.</li>
+        <li>Shipped a full-stack nutrition app with conversational meal logging, macro dashboards, and production deployment on Vercel.</li>
+        <li>Built multi-step meal interactions for ambiguous food entries, serving-size clarification, corrections, and follow-up questions.</li>
+        <li>Created a trust-focused nutrition system that separates verified food data from AI-estimated values so users can judge confidence quickly.</li>
+        <li>Iterated on mobile-first logging flows, dashboard hierarchy, and feedback states to make food entry feel faster and less robotic.</li>
       </ul>
     </div>
 
     <div class="item">
       <div class="row">
-        <p class="title">Portfolio Website — Recruiter-Focused Developer Portfolio</p>
+        <p class="title">Portfolio Website — Developer Portfolio & Resume Hub</p>
         <p class="date">Production Site</p>
       </div>
-      <p class="meta">Next.js, React, Tailwind CSS, Vercel, responsive frontend engineering | tyler-portfolio-site.vercel.app</p>
+      <p class="meta">Next.js, React, Tailwind CSS, Vercel | tyler-portfolio-site.vercel.app</p>
       <ul>
-        <li>Designed and deployed a modern personal portfolio highlighting shipped products, software engineering skills, AI product work, and product ownership.</li>
-        <li>Built responsive pages, project storytelling, resume access, typography hierarchy, and recruiter-friendly navigation for fast candidate evaluation.</li>
+        <li>Built a responsive portfolio that gives recruiters quick access to shipped products, live links, GitHub, LinkedIn, and resume materials.</li>
+        <li>Structured project pages around product context, engineering decisions, and clean frontend presentation rather than class-project summaries.</li>
       </ul>
     </div>
 
@@ -104,8 +115,8 @@
       </div>
       <p class="meta">Responsive web app, product-focused UX | stride-step-tracker-tyler-cox-s-projects1.vercel.app</p>
       <ul>
-        <li>Shipped a step tracking experience focused on daily activity visibility, simple progress feedback, and lightweight user interaction.</li>
-        <li>Prioritized mobile-friendly presentation, clear progress states, and low-friction routines for everyday user consistency.</li>
+        <li>Delivered a lightweight step tracker with simple progress feedback, daily visibility, and mobile-friendly presentation.</li>
+        <li>Kept the interface intentionally low-friction so users can check progress without digging through extra screens.</li>
       </ul>
     </div>
   </section>
@@ -118,9 +129,9 @@
         <p class="date">Aug 2023 – Present</p>
       </div>
       <ul>
-        <li>Support student residents through conflict resolution, crisis response, policy communication, documentation, and operational follow-through.</li>
-        <li>Respond to on-call and urgent situations requiring triage, professionalism, judgment, escalation, and clear communication under pressure.</li>
-        <li>Coordinate community operations, safety expectations, resident communication, events, and student support in a high-trust leadership role.</li>
+        <li>Lead and support residents through conflict resolution, policy questions, community issues, and crisis response.</li>
+        <li>Handle on-call situations with calm judgment, clear escalation, accurate documentation, and privacy-conscious communication.</li>
+        <li>Coordinate events, safety expectations, and day-to-day resident support in a high-trust campus leadership role.</li>
       </ul>
     </div>
 
@@ -130,16 +141,11 @@
         <p class="date">Sept 2022 – Present</p>
       </div>
       <ul>
-        <li>Manage front-desk operations across student, family, and staff requests with organized customer support and service-oriented communication.</li>
-        <li>Handle package, mail, scheduling, data entry, administrative documentation, and office workflows using Excel, Outlook, and Workday.</li>
-        <li>Support housing logistics, issue routing, record accuracy, multitasking, and reliable daily operations in a fast-paced campus environment.</li>
+        <li>Run front-desk support for students, families, and staff while balancing walk-ins, calls, packages, and administrative requests.</li>
+        <li>Maintain accurate records and housing workflows across Excel, Outlook, Workday, scheduling, mail, and package operations.</li>
+        <li>Route issues quickly, communicate clearly, and keep daily office operations moving in a high-volume campus environment.</li>
       </ul>
     </div>
-  </section>
-
-  <section class="section">
-    <h2>Additional Strengths</h2>
-    <p class="summary">Product-minded builder with hands-on experience shipping deployed web applications, integrating AI APIs, designing user-facing workflows, debugging production behavior, improving UX clarity, and balancing technical execution with real user needs.</p>
   </section>
 </body>
 </html>

@@ -4,6 +4,7 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 const page = fs.readFileSync(path.join(root, 'src/app/page.tsx'), 'utf8');
 const resume = fs.readFileSync(path.join(root, 'src/app/resume/page.tsx'), 'utf8');
+const pdfSource = fs.readFileSync(path.join(root, 'resume-source/Tyler-Cox-Resume.html'), 'utf8');
 const layout = fs.readFileSync(path.join(root, 'src/app/layout.tsx'), 'utf8');
 const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
 
@@ -38,13 +39,13 @@ for (const text of requiredPortfolioText) {
 }
 
 const requiredResumeText = [
-  'AI Product Engineer · Software Engineering Intern · Full-Stack Product Builder',
+  'Software Engineering Intern · Full-Stack Developer · AI Product Engineer',
+  'Ohio State CS student who builds and deploys real web products',
   'GPA 3.1',
   'Expected May 2027',
-  'Strong fit for software engineering',
-  'Built and deployed a full-stack nutrition app',
-  'Designed an AI assistant flow',
-  'trust-focused nutrition pipeline',
+  'Shipped a full-stack nutrition app',
+  'multi-step meal interactions',
+  'trust-focused nutrition system',
   'Download ATS-friendly PDF resume',
   'Resident Advisor',
   'Aug 2023 – Present',
@@ -57,6 +58,20 @@ for (const text of requiredResumeText) {
   if (!resume.includes(text)) throw new Error(`Missing resume text: ${text}`);
 }
 
+const requiredPdfSourceText = [
+  'Software Engineering Intern | Full-Stack Developer | AI Product Engineer',
+  'TypeScript, JavaScript, Python, Java, SQL, HTML/CSS',
+  'OpenAI APIs, LLM integration, intent classification, conversational UX, structured outputs',
+  'Shipped a full-stack nutrition app',
+  'Resident Advisor — The Ohio State University Housing',
+  'Office Assistant — OSU Housing',
+  'Sept 2022 – Present',
+];
+
+for (const text of requiredPdfSourceText) {
+  if (!pdfSource.includes(text)) throw new Error(`Missing PDF source text: ${text}`);
+}
+
 if (!pkg.dependencies?.next || !pkg.dependencies?.react || !pkg.devDependencies?.tailwindcss) {
   throw new Error('Expected Next.js, React, and Tailwind dependencies.');
 }
@@ -65,7 +80,7 @@ if (!layout.includes('AI Product Engineer & Full Stack Product Builder')) {
   throw new Error('Missing product-engineer metadata.');
 }
 
-if (/placeholder|lorem ipsum|Create Next App|Deploy Now/i.test(page + resume)) {
+if (/placeholder|lorem ipsum|Create Next App|Deploy Now/i.test(page + resume + pdfSource)) {
   throw new Error('Found generic placeholder copy.');
 }
 
