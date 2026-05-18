@@ -4,133 +4,142 @@
   <meta charset="utf-8" />
   <title>Tyler Cox Resume</title>
   <style>
-    @page { size: Letter; margin: 0.42in; }
+    @page { size: Letter; margin: 0.5in; }
     * { box-sizing: border-box; }
-    body { margin: 0; color: #111827; font-family: Arial, Helvetica, sans-serif; font-size: 10.2px; line-height: 1.24; }
+    body {
+      margin: 0;
+      color: #000;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.4px;
+      line-height: 1.28;
+      background: #fff;
+    }
     h1, h2, h3, p { margin: 0; }
-    a { color: #111827; text-decoration: none; }
-    .header { border-bottom: 1.3px solid #111827; padding-bottom: 7px; margin-bottom: 7px; }
-    .top { display: flex; justify-content: space-between; gap: 18px; align-items: flex-end; }
-    h1 { font-size: 24px; letter-spacing: -0.4px; line-height: 1; }
-    .headline { margin-top: 3px; font-size: 10.9px; font-weight: 700; }
-    .contact { font-size: 9.1px; color: #374151; text-align: right; line-height: 1.35; min-width: 250px; }
-    .summary { margin-top: 6px; color: #1f2937; }
-    .grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 11px; }
+    a { color: #000; text-decoration: none; }
+    .header { text-align: center; margin-bottom: 8px; }
+    h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 23px; letter-spacing: .2px; line-height: 1; font-weight: 700; }
+    .contact { margin-top: 4px; font-size: 9.4px; line-height: 1.25; }
+    .target { margin-top: 4px; font-size: 10.2px; font-weight: 700; }
     .section { margin-top: 7px; break-inside: avoid; }
-    h2 { font-size: 10.4px; letter-spacing: 0.75px; text-transform: uppercase; border-bottom: 0.7px solid #9ca3af; padding-bottom: 2px; margin-bottom: 4px; }
-    h3 { font-size: 10.5px; line-height: 1.14; }
-    .line { margin-top: 1px; color: #374151; font-size: 9.45px; }
+    h2 {
+      font-size: 10.5px;
+      line-height: 1.1;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #000;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
     .item { margin-top: 5px; break-inside: avoid; }
     .item:first-child { margin-top: 0; }
-    .item-head { display: flex; justify-content: space-between; gap: 8px; font-weight: 700; }
-    .date { white-space: nowrap; color: #374151; font-size: 9.4px; font-weight: 700; }
-    .meta { color: #374151; font-size: 9.2px; margin-top: 1px; }
-    ul { margin: 2.5px 0 0 12px; padding: 0; }
-    li { margin: 1.45px 0; padding-left: 1px; }
+    .title { font-weight: 700; font-size: 10.5px; }
+    .meta { font-style: italic; font-size: 9.5px; margin-top: 1px; }
+    .date { white-space: nowrap; font-size: 9.6px; font-weight: 700; }
+    ul { margin: 2px 0 0 14px; padding: 0; }
+    li { margin: 1.6px 0; padding-left: 1px; }
     .skills p { margin-top: 2px; }
     .label { font-weight: 700; }
+    .summary { margin-top: 2px; }
   </style>
 </head>
 <body>
   <header class="header">
-    <div class="top">
-      <div>
-        <h1>Tyler Cox</h1>
-        <p class="headline">AI Product Engineer | Software Engineering Intern | Full-Stack Product Builder</p>
-      </div>
-      <p class="contact">Columbus, OH<br>Tyler.cox66@yahoo.com<br>linkedin.com/in/tyler-cox-53b886406<br>github.com/TyCodes101 | tyler-portfolio-site.vercel.app</p>
-    </div>
-    <p class="summary">Ohio State Computer Science & Engineering student building deployed full-stack products with conversational AI, polished frontend systems, and practical product judgment. Strong fit for software engineering, AI product engineering, and startup-style roles requiring ownership, speed, and user-facing execution.</p>
+    <h1>Tyler Cox</h1>
+    <p class="contact">Columbus, OH | Tyler.cox66@yahoo.com | linkedin.com/in/tyler-cox-53b886406 | github.com/TyCodes101 | tyler-portfolio-site.vercel.app</p>
+    <p class="target">Software Engineering Intern | AI Product Engineer | Full-Stack Developer</p>
   </header>
 
-  <div class="grid">
-    <main>
-      <section class="section">
-        <h2>Featured Projects</h2>
-        <div class="item">
-          <p class="item-head"><span>Calorie Compass — AI-Powered Calorie and Macro Tracking Platform</span></p>
-          <p class="meta">Next.js, React, TypeScript, PostgreSQL, Prisma, OpenAI APIs, Vercel | calorie-compass-chi.vercel.app</p>
-          <ul>
-            <li>Built and deployed a full-stack nutrition app with conversational meal logging, macro tracking, and a dashboard-first mobile experience.</li>
-            <li>Designed an AI assistant flow for natural food entry, serving-size clarification, correction handling, and context-aware follow-up questions.</li>
-            <li>Implemented a trust-focused nutrition pipeline that separates verified food data from estimated values so users understand confidence and source quality.</li>
-            <li>Improved the product experience through responsive dashboards, polished logging flows, and UX decisions focused on speed, clarity, and user confidence.</li>
-          </ul>
-        </div>
-        <div class="item">
-          <p class="item-head"><span>Portfolio Website — Recruiter-Focused Personal Product Portfolio</span></p>
-          <p class="meta">Next.js, React, Tailwind CSS, Vercel, responsive UI | tyler-portfolio-site.vercel.app</p>
-          <ul>
-            <li>Designed and deployed a modern portfolio that presents shipped products, technical ownership, and product-engineering strengths for internship recruiting.</li>
-            <li>Built a responsive frontend with polished typography, project storytelling, resume access, and recruiter-friendly navigation.</li>
-          </ul>
-        </div>
-        <div class="item">
-          <p class="item-head"><span>Stride Fitness — Deployed Step Tracking Product</span></p>
-          <p class="meta">Responsive web app, product-focused UX | stride-step-tracker-tyler-cox-s-projects1.vercel.app</p>
-          <ul>
-            <li>Shipped a fitness tracking experience focused on daily step visibility, progress feedback, and lightweight user interaction.</li>
-            <li>Prioritized simple flows, mobile-friendly presentation, and clear progress states for everyday consistency.</li>
-          </ul>
-        </div>
-      </section>
+  <section class="section">
+    <h2>Education</h2>
+    <div class="row">
+      <p class="title">The Ohio State University — B.S. Computer Science & Engineering</p>
+      <p class="date">Expected May 2027</p>
+    </div>
+    <p class="meta">Columbus, OH | GPA: 3.1</p>
+  </section>
 
-      <section class="section">
-        <h2>Experience</h2>
-        <div class="item">
-          <p class="item-head"><span>Resident Advisor — The Ohio State University Housing</span><span class="date">Aug 2023 – Present</span></p>
-          <ul>
-            <li>Support a residential community through conflict response, student support, policy communication, and operational follow-through.</li>
-            <li>Respond to on-call and urgent situations with calm triage, accurate documentation, and clear escalation when needed.</li>
-            <li>Communicate expectations, resolve resident concerns, and translate university procedures into practical day-to-day support.</li>
-            <li>Coordinate community operations, events, and safety practices while balancing confidentiality, empathy, and accountability.</li>
-          </ul>
-        </div>
-        <div class="item">
-          <p class="item-head"><span>Office Assistant — OSU Housing</span><span class="date">Sept 2022 – Present</span></p>
-          <ul>
-            <li>Manage front-desk operations across student, family, and staff interactions with organized, service-oriented communication.</li>
-            <li>Handle package, mail, scheduling, documentation, and administrative workflows using Excel, Outlook, and Workday.</li>
-            <li>Maintain accurate records and sensitive information in a fast-paced housing environment with high daily request volume.</li>
-            <li>Support operational logistics, issue routing, and office coordination to keep housing services reliable and responsive.</li>
-          </ul>
-        </div>
-      </section>
-    </main>
+  <section class="section skills">
+    <h2>Technical Skills</h2>
+    <p><span class="label">Languages:</span> TypeScript, JavaScript, Python, Java, SQL, HTML, CSS</p>
+    <p><span class="label">Frontend:</span> React, Next.js, Tailwind CSS, responsive design, mobile-first UI, accessibility basics, UI/UX systems</p>
+    <p><span class="label">Backend & Data:</span> Node.js, PostgreSQL, Prisma, REST APIs, full-stack architecture, data modeling</p>
+    <p><span class="label">AI & Product Engineering:</span> OpenAI APIs, LLM integration, prompt engineering, intent classification, conversational UX, structured outputs, AI-assisted workflows</p>
+    <p><span class="label">Tools & Deployment:</span> Git, GitHub, Vercel, CI/CD workflows, testing, debugging, Chrome DevTools, Excel, Outlook, Workday</p>
+  </section>
 
-    <aside>
-      <section class="section">
-        <h2>Education</h2>
-        <p class="item-head">The Ohio State University</p>
-        <p class="line">B.S. Computer Science & Engineering</p>
-        <p class="line">Expected May 2027 | GPA: 3.1 | Columbus, OH</p>
-      </section>
+  <section class="section">
+    <h2>Projects</h2>
+    <div class="item">
+      <div class="row">
+        <p class="title">Calorie Compass — AI-Powered Calorie and Macro Tracking Platform</p>
+        <p class="date">Production App</p>
+      </div>
+      <p class="meta">Next.js, React, TypeScript, PostgreSQL, Prisma, OpenAI APIs, Vercel | calorie-compass-chi.vercel.app</p>
+      <ul>
+        <li>Built and deployed a full-stack nutrition tracking app with conversational meal logging, macro tracking, responsive dashboards, and a mobile-first product experience.</li>
+        <li>Designed AI assistant behavior for natural food entry, intent classification, serving-size clarification, correction handling, and context-aware follow-up questions.</li>
+        <li>Implemented a trust-focused nutrition pipeline that separates verified food data from estimated AI-assisted values to improve transparency and user confidence.</li>
+        <li>Developed user-facing flows across frontend UI, backend data models, AI API integration, deployment configuration, and production iteration workflows.</li>
+      </ul>
+    </div>
 
-      <section class="section skills">
-        <h2>Technical Skills</h2>
-        <p><span class="label">Languages:</span> TypeScript, JavaScript, Python, Java, SQL, HTML, CSS</p>
-        <p><span class="label">Frameworks:</span> React, Next.js, Node.js, Tailwind CSS, Prisma</p>
-        <p><span class="label">AI/Product:</span> OpenAI APIs, intent classification, conversational UX, prompt engineering, structured outputs</p>
-        <p><span class="label">Backend/Data:</span> PostgreSQL, REST APIs, full-stack systems, data modeling</p>
-        <p><span class="label">Deployment/Tools:</span> Vercel, Git, GitHub, responsive design, testing workflows, Chrome DevTools</p>
-        <p><span class="label">Operations Tools:</span> Excel, Outlook, Workday</p>
-      </section>
+    <div class="item">
+      <div class="row">
+        <p class="title">Portfolio Website — Recruiter-Focused Developer Portfolio</p>
+        <p class="date">Production Site</p>
+      </div>
+      <p class="meta">Next.js, React, Tailwind CSS, Vercel, responsive frontend engineering | tyler-portfolio-site.vercel.app</p>
+      <ul>
+        <li>Designed and deployed a modern personal portfolio highlighting shipped products, software engineering skills, AI product work, and product ownership.</li>
+        <li>Built responsive pages, project storytelling, resume access, typography hierarchy, and recruiter-friendly navigation for fast candidate evaluation.</li>
+      </ul>
+    </div>
 
-      <section class="section">
-        <h2>Recruiter Snapshot</h2>
-        <ul>
-          <li><strong>Builds real products:</strong> multiple deployed apps with live URLs and product-oriented UX.</li>
-          <li><strong>AI/product edge:</strong> hands-on conversational AI, intent classification, and user trust systems.</li>
-          <li><strong>Frontend strength:</strong> responsive interfaces, mobile-first layouts, and polished visual hierarchy.</li>
-          <li><strong>Operational maturity:</strong> RA/OA roles show communication, triage, documentation, and reliability.</li>
-        </ul>
-      </section>
+    <div class="item">
+      <div class="row">
+        <p class="title">Stride Fitness — Step Tracking Product</p>
+        <p class="date">Deployed App</p>
+      </div>
+      <p class="meta">Responsive web app, product-focused UX | stride-step-tracker-tyler-cox-s-projects1.vercel.app</p>
+      <ul>
+        <li>Shipped a step tracking experience focused on daily activity visibility, simple progress feedback, and lightweight user interaction.</li>
+        <li>Prioritized mobile-friendly presentation, clear progress states, and low-friction routines for everyday user consistency.</li>
+      </ul>
+    </div>
+  </section>
 
-      <section class="section">
-        <h2>Focus Areas</h2>
-        <p>AI products | frontend engineering | UX systems | automation | startup execution | full-stack apps</p>
-      </section>
-    </aside>
-  </div>
+  <section class="section">
+    <h2>Experience</h2>
+    <div class="item">
+      <div class="row">
+        <p class="title">Resident Advisor — The Ohio State University Housing</p>
+        <p class="date">Aug 2023 – Present</p>
+      </div>
+      <ul>
+        <li>Support student residents through conflict resolution, crisis response, policy communication, documentation, and operational follow-through.</li>
+        <li>Respond to on-call and urgent situations requiring triage, professionalism, judgment, escalation, and clear communication under pressure.</li>
+        <li>Coordinate community operations, safety expectations, resident communication, events, and student support in a high-trust leadership role.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="row">
+        <p class="title">Office Assistant — OSU Housing</p>
+        <p class="date">Sept 2022 – Present</p>
+      </div>
+      <ul>
+        <li>Manage front-desk operations across student, family, and staff requests with organized customer support and service-oriented communication.</li>
+        <li>Handle package, mail, scheduling, data entry, administrative documentation, and office workflows using Excel, Outlook, and Workday.</li>
+        <li>Support housing logistics, issue routing, record accuracy, multitasking, and reliable daily operations in a fast-paced campus environment.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Additional Strengths</h2>
+    <p class="summary">Product-minded builder with hands-on experience shipping deployed web applications, integrating AI APIs, designing user-facing workflows, debugging production behavior, improving UX clarity, and balancing technical execution with real user needs.</p>
+  </section>
 </body>
 </html>
