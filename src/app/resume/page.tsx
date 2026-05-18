@@ -1,11 +1,10 @@
 import Link from "next/link";
 
 const projectBullets = [
-  "Built an AI-powered conversational nutrition tracking platform using Next.js and modern full-stack architecture.",
-  "Designed a correction-aware conversational assistant with structured AI intent handling and intelligent meal state management.",
-  "Implemented trusted nutrition reconciliation pipelines with verified vs estimated source systems for clearer nutrition confidence.",
-  "Developed a mobile-first UX focused on intuitive consumer interaction, polished responsiveness, and low-friction meal logging.",
-  "Integrated automated testing, deployment workflows, and scalable frontend architecture to support product-focused iteration.",
+  "Built and deployed a full-stack nutrition tracking app with conversational meal logging, macro tracking, and a mobile-first dashboard.",
+  "Designed user flows for natural food entry, serving-size clarification, and correction handling to reduce friction during logging.",
+  "Implemented trust-focused nutrition presentation that separates verified food data from estimated values for clearer user confidence.",
+  "Organized the product around practical user needs: speed, clarity, responsive interaction, and understandable nutrition feedback.",
 ];
 
 const experience = [
@@ -41,7 +40,7 @@ export default function ResumePage() {
             <div>
               <h1 className="text-5xl font-black tracking-[-.07em] text-[#191f2a] sm:text-6xl">Tyler Cox</h1>
               <p className="mt-4 max-w-3xl text-lg leading-8 text-stone-600">
-                Ohio State Computer Science & Engineering student building AI-powered, full-stack consumer products with polished UX, conversational AI systems, and production-ready deployment workflows. GPA: 3.1 · Expected graduation: May 2027.
+                Ohio State Computer Science & Engineering student building deployed full-stack web products with conversational AI, responsive UI, and practical product thinking. Seeking software engineering internships where I can contribute to user-facing features, reliable systems, and thoughtful product execution. GPA: 3.1 · Expected graduation: May 2027.
               </p>
             </div>
             <div className="text-sm font-semibold text-stone-600 lg:text-right">
@@ -103,7 +102,7 @@ export default function ResumePage() {
 
         <footer className="mt-8 flex flex-col justify-between gap-3 border-t border-stone-900/10 pt-6 text-sm font-bold text-stone-600 sm:flex-row">
           <Link href="/">← Portfolio</Link>
-          <a href="/Tyler-Cox-Resume.pdf">Open existing PDF resume</a>
+          <a href="/Tyler-Cox-Resume.pdf">Download ATS-friendly PDF resume</a>
         </footer>
       </article>
     </main>

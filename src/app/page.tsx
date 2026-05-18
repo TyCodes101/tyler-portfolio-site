@@ -124,11 +124,11 @@ export default function Home() {
               Building AI-powered apps that feel human.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-stone-600 sm:text-xl">
-              I’m Tyler Cox, an Ohio State Computer Science & Engineering student building conversational AI systems, full-stack products, polished consumer experiences, and production-ready software that people can actually use.
+              I’m Tyler Cox, an Ohio State Computer Science & Engineering student building deployed full-stack products with conversational AI, responsive UI, and practical product thinking. I’m looking for software engineering opportunities where I can help ship useful, user-facing features.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button href="#projects">View Projects</Button>
-              <Button href="/Tyler-Cox-Resume.pdf" variant="secondary">Resume</Button>
+              <Button href="/Tyler-Cox-Resume.pdf" variant="secondary">View Resume</Button>
               <Button href="https://github.com/TyCodes101" variant="secondary">GitHub</Button>
               <Button href="https://www.linkedin.com/in/tyler-cox-53b886406" variant="ghost">LinkedIn</Button>
             </div>
@@ -312,12 +312,12 @@ export default function Home() {
         <div className="glass mx-auto flex max-w-7xl flex-col justify-between gap-8 rounded-[2.5rem] p-8 sm:p-12 lg:flex-row lg:items-center">
           <div>
             <p className="mb-3 text-sm font-black uppercase tracking-[.22em] text-[#b9613d]">Resume</p>
-            <h2 className="text-4xl font-black tracking-[-.055em] sm:text-5xl">Recruiter-ready positioning, with a product-engineering story.</h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-stone-600">The web resume has been rewritten around AI product engineering, full-stack development, shipped products, operations leadership, and practical UX judgment.</p>
+            <h2 className="text-4xl font-black tracking-[-.055em] sm:text-5xl">A recruiter-ready resume built for quick review.</h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-stone-600">The resume is a clean one-page PDF focused on software engineering internships, shipped projects, technical skills, and practical leadership experience.</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
             <Button href="/resume" variant="secondary">View web resume</Button>
-            <Button href="/Tyler-Cox-Resume.pdf">PDF resume</Button>
+            <Button href="/Tyler-Cox-Resume.pdf">Download PDF</Button>
           </div>
         </div>
       </section>
