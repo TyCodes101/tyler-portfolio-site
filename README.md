@@ -71,6 +71,6 @@ This site is static, so it works well with:
 
 ## Contact info used on the site
 - Columbus, Ohio
-- Tyler.cox66@yahoo.com
+- cox.1644@osu.edu
 - LinkedIn: `tyler-cox-53b886406`
 - GitHub: `TyCodes101`

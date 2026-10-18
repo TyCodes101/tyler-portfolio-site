@@ -90,6 +90,19 @@ if (/Tyler\.cox66@yahoo\.com|tylercoxoh@gmail\.com/i.test(page + resume + layout
   throw new Error('Wrong contact email on active recruiter-facing pages.');
 }
 
+for (const relativePath of [
+  'index.html',
+  'resume.html',
+  'resume-source/Tyler-Cox-Resume.html',
+  'resume-source/Tyler-Cox-Resume-AI-Product.html',
+  'README.md',
+]) {
+  const source = fs.readFileSync(path.join(root, relativePath), 'utf8');
+  if (/Tyler\.cox66@yahoo\.com|tylercoxoh@gmail\.com/i.test(source)) {
+    throw new Error(`Outdated or unintended email in ${relativePath}`);
+  }
+}
+
 if (/placeholder|lorem ipsum|Create Next App|Deploy Now/i.test(page + resume + pdfSource)) {
   throw new Error('Found generic placeholder copy.');
 }
