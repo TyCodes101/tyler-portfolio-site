@@ -1,6 +1,7 @@
 """Visual acceptance of the existing portfolio plus its IncidentOPS entry."""
 
 import json
+import hashlib
 import os
 from pathlib import Path
 
@@ -17,6 +18,7 @@ with sync_playwright() as p:
     for name,width,height in [('desktop',1440,900),('mobile',390,844)]:
         page.set_viewport_size({'width':width,'height':height})
         page.goto(base,wait_until='networkidle')
+        assert page.locator('header').get_by_role('link',name='GitHub',exact=True).evaluate('(el)=>getComputedStyle(el).color') == 'rgb(255, 255, 255)'
         page.locator('#incidentops').evaluate('(el)=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-96,behavior:"instant"})')
         assert page.get_by_role('heading',name='Calorie Compass',exact=True).count() == 1
         assert page.get_by_role('heading',name='Stride Fitness',exact=True).count() == 1
@@ -44,10 +46,15 @@ with sync_playwright() as p:
             page.screenshot(path=str(output / 'portfolio-gallery-mobile.png'))
     page.goto(base+'/resume',wait_until='networkidle')
     assert page.locator('h1').is_visible()
+    assert 'software engineering intern' in page.locator('body').inner_text().lower()
+    pdf = page.request.get(base+'/Tyler-Cox-Resume.pdf')
+    assert pdf.status == 200
+    assert hashlib.sha256(pdf.body()).hexdigest() == '0b84fbb715c3b5b86002bce11a870d379aa0de0d1b16a87f923ce8b1cc60271b'
+    page.screenshot(path=str(output / 'portfolio-resume-mobile.png'))
     assert not errors,errors
     browser.close()
 output.joinpath('portfolio-browser.json').write_text(json.dumps({
     'status':'PASS','base':base,'viewports':['1440x900','390x844'],
-    'checks':['featured entry','four real screenshots loaded','full-size screenshot links','repository link','existing projects preserved','resume route','no horizontal overflow','no JS page errors']
+    'checks':['featured entry','four real screenshots loaded','full-size screenshot links','repository and verified live links','existing projects preserved','published resume route and exact PDF SHA256','visible header GitHub label','no horizontal overflow','no JS page errors']
 },indent=2))
 print('PASS: portfolio desktop/mobile screenshots, links, existing content and resume')
