@@ -14,8 +14,8 @@ const requiredPortfolioText = [
   'Building AI-powered apps that feel human.',
   'Ohio State Computer Science & Engineering',
   'Conversational AI',
-  'deployed full-stack products',
-  'software engineering opportunities',
+  'full-stack software with React, TypeScript, Python, PostgreSQL',
+  '2027 new-grad software engineering roles',
   'Calorie Compass',
   'https://calorie-compass-chi.vercel.app/',
   'https://github.com/TyCodes101/calorie-compass',
@@ -28,9 +28,9 @@ const requiredPortfolioText = [
   'https://stride-step-tracker-tyler-cox-s-projects1.vercel.app/',
   'Currently Building',
   'Engineering credibility',
-  '3.1 GPA',
+  'Seeking 2027 new-grad roles',
   'Graduating May 2027',
-  'Tyler.cox66@yahoo.com',
+  'cox.1644@osu.edu',
   'linkedin.com/in/tyler-cox-53b886406',
 ];
 
@@ -39,9 +39,9 @@ for (const text of requiredPortfolioText) {
 }
 
 const requiredResumeText = [
-  'Software Engineering Intern · Full-Stack Developer · AI Product Engineer',
-  'Ohio State CS student who builds and deploys real web products',
-  'GPA 3.1',
+  'Software Engineering New Grad 2027 · Full-Stack & Backend Developer',
+  'Ohio State CSE student graduating May 2027',
+  'cox.1644@osu.edu',
   'Expected May 2027',
   'Shipped a full-stack nutrition app',
   'Implemented stateful meal interactions',
@@ -78,8 +78,16 @@ if (!pkg.dependencies?.next || !pkg.dependencies?.react || !pkg.devDependencies?
   throw new Error('Expected Next.js, React, and Tailwind dependencies.');
 }
 
-if (!layout.includes('AI Product Engineer & Full Stack Product Builder')) {
-  throw new Error('Missing product-engineer metadata.');
+if (!layout.includes('Software Engineer 2027 | Full-Stack, Backend & AI')) {
+  throw new Error('Missing 2027 new-grad engineering metadata.');
+}
+
+if (!page.includes('href="#incidentops"') || !page.includes('https://incidentops-public-demo.vercel.app')) {
+  throw new Error('IncidentOps evidence links missing from homepage.');
+}
+
+if (/Tyler\.cox66@yahoo\.com|tylercoxoh@gmail\.com/i.test(page + resume + layout)) {
+  throw new Error('Wrong contact email on active recruiter-facing pages.');
 }
 
 if (/placeholder|lorem ipsum|Create Next App|Deploy Now/i.test(page + resume + pdfSource)) {
