@@ -5,13 +5,13 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Tyler Cox | AI Product Engineer & Full Stack Product Builder",
+  title: "Tyler Cox | Software Engineer 2027 | Full-Stack, Backend & AI",
   description:
-    "Tyler Cox builds AI-powered, full-stack consumer products with polished UX, conversational AI systems, and production-ready engineering.",
+    "Ohio State CSE student graduating May 2027. React, TypeScript, Python, FastAPI, PostgreSQL, AI workflows, security and tested full-stack software projects.",
   openGraph: {
-    title: "Tyler Cox | AI Product Engineer",
+    title: "Tyler Cox | 2027 Software Engineering New Grad",
     description:
-      "AI Product Engineer and Full Stack Product Builder focused on conversational AI, polished UX, and real shipped products.",
+      "Ohio State CSE May 2027 student building IncidentOps and MacroMesh with React, FastAPI, PostgreSQL and applied AI integration.",
     type: "website",
   },
 };

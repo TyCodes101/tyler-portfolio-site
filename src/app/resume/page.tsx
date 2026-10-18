@@ -117,18 +117,18 @@ export default function ResumePage() {
         <header className="grid gap-6 border-b border-stone-900/10 pb-7 lg:grid-cols-[1fr_auto] lg:items-end print:gap-4 print:pb-4">
           <div>
             <p className="text-xs font-black uppercase tracking-[.24em] text-[#b9613d]">
-              Software Engineering Intern · Full-Stack Developer · AI Product Engineer
+              Software Engineering New Grad 2027 · Full-Stack & Backend Developer
             </p>
             <h1 className="mt-3 text-5xl font-black tracking-[-.07em] text-[#191f2a] sm:text-6xl print:text-4xl">
               Tyler Cox
             </h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-stone-650 print:text-[11px] print:leading-[1.4]">
-              Ohio State CS student who builds and deploys real web products. Strongest in React/Next.js, full-stack JavaScript, conversational AI, and polished user-facing workflows.
+              Ohio State CSE student graduating May 2027. Builds and tests deployed web, mobile and backend software using React, TypeScript, Python, FastAPI, PostgreSQL and AI-assisted workflows.
             </p>
           </div>
           <div className="rounded-3xl bg-[#191f2a] p-5 text-sm font-semibold leading-6 text-white shadow-xl shadow-stone-700/15 lg:text-right print:bg-white print:p-0 print:text-right print:text-[10px] print:text-stone-700 print:shadow-none">
             <p>Columbus, Ohio</p>
-            <p><a href="mailto:Tyler.cox66@yahoo.com">Tyler.cox66@yahoo.com</a></p>
+            <p><a href="mailto:cox.1644@osu.edu">cox.1644@osu.edu</a></p>
             <p><a href="https://github.com/TyCodes101">github.com/TyCodes101</a></p>
             <p><a href="https://www.linkedin.com/in/tyler-cox-53b886406">linkedin.com/in/tyler-cox-53b886406</a></p>
             <p><a href="https://tyler-portfolio-site.vercel.app">tyler-portfolio-site.vercel.app</a></p>
@@ -196,7 +196,7 @@ export default function ResumePage() {
                 B.S. Computer Science & Engineering
               </p>
               <p className="mt-1 text-sm text-stone-600 print:text-[10.5px]">
-                Expected May 2027 · GPA 3.1
+                Expected May 2027
               </p>
             </Section>
 

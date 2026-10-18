@@ -132,16 +132,17 @@ export default function Home() {
               Building AI-powered apps that feel human.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-stone-600 sm:text-xl">
-              I’m Tyler Cox, an Ohio State Computer Science & Engineering student building deployed full-stack products with conversational AI, responsive UI, and practical product thinking. I’m looking for software engineering opportunities where I can help ship useful, user-facing features.
+              I’m Tyler Cox, an Ohio State Computer Science & Engineering student graduating in May 2027. I build full-stack software with React, TypeScript, Python, PostgreSQL, and practical AI workflows. I’m seeking 2027 new-grad software engineering roles where I can contribute to reliable products and grow with an engineering team.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button href="#projects">View Projects</Button>
+              <Button href="#incidentops" variant="secondary">Explore IncidentOps</Button>
               <Button href="/Tyler-Cox-Resume.pdf" variant="secondary">View Resume</Button>
               <Button href="https://github.com/TyCodes101" variant="secondary">GitHub</Button>
               <Button href="https://www.linkedin.com/in/tyler-cox-53b886406" variant="ghost">LinkedIn</Button>
             </div>
             <div className="mt-10 grid gap-3 sm:grid-cols-3">
-              {["3.1 GPA", "Graduating May 2027", "Open to internships"].map((item) => (
+              {["Full-stack · Backend", "Graduating May 2027", "Seeking 2027 new-grad roles"].map((item) => (
                 <div key={item} className="glass rounded-3xl p-4 text-sm font-bold text-stone-700">{item}</div>
               ))}
             </div>
@@ -347,7 +348,7 @@ export default function Home() {
           <div>
             <p className="mb-3 text-sm font-black uppercase tracking-[.22em] text-[#b9613d]">Resume</p>
             <h2 className="text-4xl font-black tracking-[-.055em] sm:text-5xl">A recruiter-ready resume built for quick review.</h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-stone-600">The resume is a clean one-page PDF focused on software engineering internships, shipped projects, technical skills, and practical leadership experience.</p>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-stone-600">Download my one-page software engineering résumé featuring IncidentOps, MacroMesh, engineering skills, and campus leadership.</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
             <Button href="/resume" variant="secondary">View web resume</Button>
@@ -361,11 +362,11 @@ export default function Home() {
           <div>
             <p className="mb-3 text-sm font-black uppercase tracking-[.22em] text-[#b9613d]">Contact</p>
             <h2 className="text-4xl font-black tracking-[-.055em] sm:text-6xl">Let’s build something useful.</h2>
-            <p className="mt-5 text-lg leading-8 text-stone-600">I’m open to software engineering internships, product-minded engineering conversations, and teams building polished AI or consumer software.</p>
+            <p className="mt-5 text-lg leading-8 text-stone-600">I’m seeking 2027 entry-level software engineering opportunities in full-stack, backend, applied AI, and security-focused development, especially in Ohio and on remote teams.</p>
           </div>
           <div className="glass grid gap-3 rounded-[2.5rem] p-5">
             {[
-              ['Email', 'Tyler.cox66@yahoo.com', 'mailto:Tyler.cox66@yahoo.com'],
+              ['Email', 'cox.1644@osu.edu', 'mailto:cox.1644@osu.edu'],
               ['LinkedIn', 'linkedin.com/in/tyler-cox-53b886406', 'https://www.linkedin.com/in/tyler-cox-53b886406'],
               ['GitHub', 'github.com/TyCodes101', 'https://github.com/TyCodes101'],
               ['Live product', 'Calorie Compass', 'https://calorie-compass-chi.vercel.app/'],
