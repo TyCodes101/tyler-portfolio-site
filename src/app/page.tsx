@@ -1,4 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
+
+const incidentScreens = [
+  ["overview", "Security overview", "IncidentOps overview with unresolved cases, triage queue and audit activity"],
+  ["queue", "Incident workspace", "Searchable IncidentOps case queue with severity, status and assignment columns"],
+  ["investigation", "Investigation", "IncidentOps investigation with case properties, notes and chronological history"],
+  ["analyzer", "Login-event analyzer", "IncidentOps CSV analyzer showing the documented suspicious-login rule"],
+];
 
 const calorieFeatures = [
   "Conversational meal logging",
@@ -224,7 +232,38 @@ export default function Home() {
             </div>
           </article>
 
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          <article id="incidentops" aria-labelledby="incidentops-title" className="glass mt-6 overflow-hidden rounded-[2.5rem]">
+            <div className="grid gap-8 p-7 sm:p-10 lg:grid-cols-[1fr_1.1fr] lg:gap-12 lg:p-12">
+              <div>
+                <p className="mb-3 text-sm font-black uppercase tracking-[.18em] text-[#6f8d77]">Featured full-stack engineering</p>
+                <h3 id="incidentops-title" className="text-3xl font-black tracking-tight sm:text-4xl">IncidentOPS — Security Incident Management Platform</h3>
+                <p className="mt-5 leading-7 text-stone-600">Developed a full-stack incident management application featuring secure authentication, role-based permissions, searchable case queues, audit-backed investigations, and CSV login-event analysis.</p>
+                <p className="mt-5 text-sm font-semibold leading-7 text-stone-600"><strong className="text-[#191f2a]">Stack:</strong> React, TypeScript, Python, FastAPI, SQLAlchemy, PostgreSQL, GitHub Actions, Docker</p>
+                <ul className="mt-6 list-disc space-y-3 pl-5 leading-7 text-stone-600">
+                  <li>REST API with server-side sessions, CSRF checks and Admin, Analyst and Viewer permissions.</li>
+                  <li>Persistent investigations, notes and audit events, with PostgreSQL restart and backup/restore checks in CI.</li>
+                  <li>Responsive case workflows and deterministic CSV analysis, backed by frontend, API and browser tests.</li>
+                </ul>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <Button href="https://incidentops-public-demo.vercel.app">Try IncidentOPS</Button>
+                  <Button href="https://github.com/TyCodes101/incidentops" variant="secondary">IncidentOPS on GitHub</Button>
+                </div>
+                <p className="mt-4 text-sm leading-6 text-stone-600">Verified live sandbox with shared Analyst and Viewer accounts. Use fictional data only; changes are visible to other visitors and shared action quotas apply.</p>
+              </div>
+              <div className="grid content-start gap-5 sm:grid-cols-2" aria-label="Verified IncidentOPS screenshots">
+                {incidentScreens.map(([file, title, alt]) => (
+                  <figure key={file} className="min-w-0">
+                    <a href={`/assets/incidentops/${file}.png`} target="_blank" rel="noreferrer" aria-label={`Open full-size ${title.toLowerCase()} screenshot`} className="block overflow-hidden rounded-xl border border-stone-900/15 bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8f3d27]">
+                      <Image src={`/assets/incidentops/${file}.png`} alt={alt} width={2880} height={2122} sizes="(min-width: 1024px) 270px, (min-width: 640px) 42vw, 85vw" className="aspect-[4/3] w-full object-contain object-top" />
+                    </a>
+                    <figcaption className="mt-2 text-sm font-bold text-stone-600">{title} <span className="font-normal">· open full size</span></figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </article>
+
+          <div className="mt-6">
             <article className="glass rounded-[2.2rem] p-8">
               <p className="mb-3 text-sm font-black uppercase tracking-[.18em] text-[#b9613d]">Supporting product</p>
               <h3 className="text-3xl font-black tracking-tight">Stride Fitness</h3>
@@ -235,11 +274,6 @@ export default function Home() {
               <div className="mt-7"><Button href="https://stride-step-tracker-tyler-cox-s-projects1.vercel.app/" variant="secondary">Live Stride demo</Button></div>
             </article>
 
-            <article className="glass rounded-[2.2rem] p-8">
-              <p className="mb-3 text-sm font-black uppercase tracking-[.18em] text-[#6f8d77]">Future case study</p>
-              <h3 className="text-3xl font-black tracking-tight">Next product build</h3>
-              <p className="mt-4 leading-7 text-stone-600">A reserved slot for the next shipped application with a case-study format: user problem, product decisions, engineering architecture, screenshots, deployment, and measurable outcomes.</p>
-            </article>
           </div>
         </div>
       </section>
