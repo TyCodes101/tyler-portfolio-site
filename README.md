@@ -1,6 +1,6 @@
 # Tyler Cox portfolio — current Next.js application
 
-The published portfolio uses React, TypeScript and Tailwind. This update is based on `feature/ai-product-brand-overhaul`, the source matching the live site's cream, terracotta and sage design. The repository's older static `main` branch is not substituted for the published interface.
+The published portfolio uses React, TypeScript and Tailwind. This update preserves the cream, terracotta and sage homepage from `feature/ai-product-brand-overhaul`, plus the exact later resume/PDF changes from the previously deployed `resume-overhaul-2026` branch. The repository's older static `main` branch is not substituted for the published interface. Production now tracks `feature/ai-product-brand-overhaul`, which includes both histories.
 
 IncidentOPS is featured alongside the existing projects with an engineering summary, repository link and four real application screenshots. Its live link is shown only after the actual deployment passes acceptance. Existing project content, navigation, resume and visual language are preserved.
 
