@@ -2,83 +2,109 @@ import Link from "next/link";
 
 const skillGroups = [
   {
-    label: "Core Stack",
-    skills: ["TypeScript", "JavaScript", "React", "Next.js", "Node.js"],
+    "label": "Languages",
+    "skills": [
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "Java",
+      "C",
+      "Swift"
+    ]
   },
   {
-    label: "Product UI",
-    skills: ["Tailwind CSS", "Responsive UI", "Mobile-first flows", "Frontend polish"],
+    "label": "Frameworks",
+    "skills": [
+      "React",
+      "Next.js",
+      "FastAPI",
+      "SwiftUI",
+      "REST APIs"
+    ]
   },
   {
-    label: "Backend + Data",
-    skills: ["PostgreSQL", "Prisma", "REST APIs", "Full-stack architecture"],
+    "label": "Data",
+    "skills": [
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Prisma",
+      "Alembic"
+    ]
   },
   {
-    label: "AI + Tools",
-    skills: ["OpenAI APIs", "Intent handling", "Structured outputs", "Git/GitHub", "Vercel"],
-  },
+    "label": "Tools",
+    "skills": [
+      "Git",
+      "Docker",
+      "GitHub Actions",
+      "pytest",
+      "Vitest",
+      "Vercel"
+    ]
+  }
 ];
 
 const projects = [
   {
-    name: "Calorie Compass",
-    label: "AI calorie & macro tracking platform",
-    badge: "Production App",
-    stack: "Next.js · React · TypeScript · PostgreSQL · Prisma · OpenAI APIs · Vercel",
-    href: "https://calorie-compass-chi.vercel.app/",
-    bullets: [
-      "Shipped a full-stack nutrition app with conversational meal logging, macro dashboards, and production deployment on Vercel.",
-      "Implemented stateful meal interactions supporting corrections, quantity updates, and clarification recovery across active conversations.",
-      "Built structured intent handling for food entries so the assistant can distinguish logging, editing, clarification, and correction requests.",
-      "Created a trust-focused nutrition pipeline that separates verified food data from AI-estimated values for faster confidence checks.",
-      "Refined mobile-first logging flows through repeated UX iteration across dashboard hierarchy, feedback states, and meal-entry friction.",
-    ],
+    "name": "IncidentOPS",
+    "label": "Security incident management platform",
+    "badge": "2026 – Present",
+    "stack": "React · TypeScript · Python · FastAPI · PostgreSQL · SQLAlchemy · Docker",
+    "href": "https://incidentops-public-demo.vercel.app/",
+    "bullets": [
+      "Built a React/TypeScript incident workbench backed by FastAPI and PostgreSQL, with searchable queues, analyst assignments, investigation notes, and audit histories.",
+      "Enforced Admin, Analyst, and Viewer permissions in the API; implemented Argon2 password hashing, hashed server-side sessions, and CSRF/origin checks.",
+      "Committed incident changes and audit events in one database transaction; added Alembic migrations and validated CSV login-event analysis.",
+      "Automated frontend and backend checks in GitHub Actions CI, including PostgreSQL integration, container restart persistence, and backup/restore tests."
+    ]
   },
   {
-    name: "Portfolio Website",
-    label: "developer portfolio & resume hub",
-    badge: "Production Site",
-    stack: "Next.js · React · Tailwind CSS · Vercel",
-    href: "https://tyler-portfolio-site.vercel.app/",
-    bullets: [
-      "Built a responsive portfolio that gives recruiters quick access to shipped products, live links, GitHub, LinkedIn, and resume materials.",
-      "Structured project presentation around product context, engineering decisions, and clean frontend hierarchy rather than class-project summaries.",
-    ],
+    "name": "MacroMesh / Calorie Compass",
+    "label": "AI-assisted nutrition logging for web and iOS",
+    "badge": "2026 – Present",
+    "stack": "Next.js · TypeScript · SwiftUI · PostgreSQL · Prisma · OpenAI API",
+    "href": "https://calorie-compass-chi.vercel.app/",
+    "bullets": [
+      "Built Next.js web and SwiftUI iOS clients for conversational meal logging, review-before-save, meal history, and progress tracking.",
+      "Integrated a verified food catalog, USDA FoodData Central, Open Food Facts, and LLM fallback with source labels and structured validation.",
+      "Improved branded-food matching from 3/25 to 21/25 passing cases in a fixed offline benchmark; added identity/category regression checks.",
+      "Rejected meal saves that reused a user's idempotency key; used Prisma transactions and database uniqueness constraints, with tests for duplicate-key and conflict handling."
+    ]
   },
   {
-    name: "Stride Fitness",
-    label: "step tracking product",
-    badge: "Deployed App",
-    stack: "Responsive web app · product-focused UX",
-    href: "https://stride-step-tracker-tyler-cox-s-projects1.vercel.app/",
-    bullets: [
-      "Delivered a lightweight step tracker with simple progress feedback, daily visibility, and mobile-friendly presentation.",
-      "Kept the interface intentionally low-friction so users can check progress without digging through extra screens.",
-    ],
-  },
+    "name": "CPU Scheduler Visualizer",
+    "label": "Interactive operating systems scheduling simulation",
+    "badge": "2025",
+    "stack": "JavaScript · React · Vite · Vitest · Testing Library",
+    "href": "https://tycodes101.github.io/cpu-scheduler-visualizer/",
+    "bullets": [
+      "Implemented FCFS, non-preemptive shortest-job-first, priority scheduling, and Round Robin; calculated waiting, turnaround, and response times.",
+      "Built editable workloads and Gantt-chart playback in React; verified scheduling logic and interface behavior with 7 passing Vitest tests."
+    ]
+  }
 ];
 
 const experience = [
   {
-    role: "Resident Advisor",
-    org: "The Ohio State University Housing",
-    dates: "Aug 2023 – Present",
-    bullets: [
-      "Lead and support residents through conflict resolution, policy questions, community issues, and crisis response.",
-      "Handle on-call situations with calm judgment, clear escalation, accurate documentation, and privacy-conscious communication.",
-      "Coordinate events, safety expectations, and day-to-day resident support in a high-trust campus leadership role.",
-    ],
+    "role": "Resident Advisor",
+    "org": "The Ohio State University Housing",
+    "dates": "Aug 2023 – Present",
+    "bullets": [
+      "Respond to resident concerns and on-call incidents, de-escalate conflicts, document reports, and coordinate with housing and campus staff.",
+      "Organize community events, explain housing policies and resources, and prioritize time-sensitive issues alongside routine responsibilities."
+    ]
   },
   {
-    role: "Office Assistant",
-    org: "OSU Housing",
-    dates: "Sept 2022 – Present",
-    bullets: [
-      "Run front-desk support for students, families, and staff while balancing walk-ins, calls, packages, and administrative requests.",
-      "Maintain accurate records and housing workflows across Excel, Outlook, Workday, scheduling, mail, and package operations.",
-      "Route issues quickly, communicate clearly, and keep daily office operations moving in a high-volume campus environment.",
-    ],
-  },
+    "role": "Office Assistant",
+    "org": "The Ohio State University Housing",
+    "dates": "Sep 2022 – Present",
+    "bullets": [
+      "Maintained and updated resident housing records in StarRez, BASIS, and university database systems to support data accuracy and daily operations.",
+      "Logged incoming packages, processed pickups and issuance, and used tracking records to investigate missing deliveries and resolve discrepancies.",
+      "Supported student and staff requests using Excel, Outlook, Workday, and university housing systems."
+    ]
+  }
 ];
 
 function Section({ title, eyebrow, children }: { title: string; eyebrow?: string; children: React.ReactNode }) {
@@ -198,6 +224,7 @@ export default function ResumePage() {
               <p className="mt-1 text-sm text-stone-600 print:text-[10.5px]">
                 Expected May 2027
               </p>
+              <p className="mt-3 text-sm leading-6 text-stone-600">Coursework: Data Structures &amp; Algorithms, Operating Systems, Database Design &amp; SQL, Object-Oriented Programming</p>
             </Section>
 
             <Section title="Technical Skills">
@@ -219,13 +246,9 @@ export default function ResumePage() {
               </div>
             </Section>
 
-            <Section title="10-second read">
-              <ul className="grid gap-3 text-sm leading-6 text-stone-700 print:gap-1 print:text-[10.5px] print:leading-[1.35]">
-                <li><strong>Ships:</strong> multiple deployed apps with live URLs.</li>
-                <li><strong>AI:</strong> conversational logging, intent classification, trust states.</li>
-                <li><strong>Frontend:</strong> responsive UI, mobile-first flows, clean hierarchy.</li>
-                <li><strong>Reliable:</strong> RA/OA work shows communication, triage, and follow-through.</li>
-              </ul>
+            <Section title="Additional Training">
+              <p className="text-sm leading-6 text-stone-700">Cisco Python Essentials 2; IBM Cloud Computing Fundamentals; IBM Cybersecurity Fundamentals</p>
+              <a className="mt-3 inline-block text-sm font-bold text-[#8f3d27]" href="https://www.credly.com/users/tyler-cox.e044ef47">View credentials on Credly</a>
             </Section>
 
             <Section title="Download">
