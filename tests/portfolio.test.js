@@ -1,66 +1,112 @@
 const fs = require('fs');
 const path = require('path');
 
-const htmlPath = path.join(__dirname, '..', 'index.html');
-const html = fs.readFileSync(htmlPath, 'utf8');
+const root = path.join(__dirname, '..');
+const page = fs.readFileSync(path.join(root, 'src/app/page.tsx'), 'utf8');
+const resume = fs.readFileSync(path.join(root, 'src/app/resume/page.tsx'), 'utf8');
+const pdfSource = fs.readFileSync(path.join(root, 'resume-source/Tyler-Cox-Resume.html'), 'utf8');
+const layout = fs.readFileSync(path.join(root, 'src/app/layout.tsx'), 'utf8');
+const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
 
-const requiredIds = ['home', 'about', 'competencies', 'experience', 'projects', 'resume', 'contact'];
-const requiredText = [
-  'Tyler Cox',
-  'Computer Science student, student leader, and builder focused on practical technology',
-  'Computer Science &amp; Engineering student, Resident Advisor, and aspiring software developer building useful tools with real-world purpose.',
-  'The Ohio State University',
-  'Gymst / Fitness Tracking App Concept',
-  'Relevant Coursework',
-  'Software Components',
-  'Tag Cloud Generator',
-  'Word Counter',
-  'MapReduce Word Count Lab',
-  'ESP32 Alarm / Embedded Project',
-  'Sorting / Data Structures Projects',
-  'Resident Advisor',
-  'Office Assistant',
-  'Resume',
-  'Tyler.cox66@yahoo.com',
+const requiredPortfolioText = [
+  'AI Product Engineer',
+  'Full Stack Product Builder',
+  'Building AI-powered apps that feel human.',
+  'Ohio State Computer Science & Engineering',
+  'Conversational AI',
+  'full-stack software with React, TypeScript, Python, PostgreSQL',
+  '2027 new-grad software engineering roles',
+  'Calorie Compass',
+  'https://calorie-compass-chi.vercel.app/',
+  'https://github.com/TyCodes101/calorie-compass',
+  'Most calorie trackers feel robotic, tedious, and disconnected from natural conversation.',
+  'Correction-aware assistant',
+  'Verified vs estimated trust system',
+  'AI intent classification',
+  'Intelligent nutrition reconciliation',
+  'Stride Fitness',
+  'https://stride-step-tracker-tyler-cox-s-projects1.vercel.app/',
+  'Currently Building',
+  'Engineering credibility',
+  'Seeking 2027 new-grad roles',
+  'Graduating May 2027',
+  'cox.1644@osu.edu',
   'linkedin.com/in/tyler-cox-53b886406',
-  'github.com/TyCodes101',
-  'Columbus, Ohio'
 ];
 
-for (const id of requiredIds) {
-  if (!html.includes(`id="${id}"`)) {
-    throw new Error(`Missing required section: ${id}`);
+for (const text of requiredPortfolioText) {
+  if (!page.includes(text)) throw new Error(`Missing portfolio text: ${text}`);
+}
+
+const requiredResumeText = [
+  'Software Engineering New Grad 2027 · Full-Stack & Backend Developer',
+  'Ohio State CSE student graduating May 2027',
+  'cox.1644@osu.edu',
+  'Expected May 2027',
+  'IncidentOPS',
+  'MacroMesh / Calorie Compass',
+  'CPU Scheduler Visualizer',
+  'idempotency key',
+  'StarRez',
+  'BASIS',
+  'Download ATS-friendly PDF resume',
+  'Resident Advisor',
+  'Aug 2023 – Present',
+  'Office Assistant',
+  'Sep 2022 – Present',
+  'document reports',
+];
+
+for (const text of requiredResumeText) {
+  if (!resume.includes(text)) throw new Error(`Missing resume text: ${text}`);
+}
+
+const requiredPdfSourceText = [
+  'Software Engineering Intern | Full-Stack Developer | AI Product Engineer',
+  'TypeScript, JavaScript, Python, Java, SQL, HTML/CSS',
+  'OpenAI APIs, intent classification, structured outputs, conversational UX, AI-assisted workflows',
+  'Shipped a full-stack nutrition app',
+  'Implemented stateful meal interactions',
+  'Resident Advisor — The Ohio State University Housing',
+  'Office Assistant — OSU Housing',
+  'Sept 2022 – Present',
+];
+
+for (const text of requiredPdfSourceText) {
+  if (!pdfSource.includes(text)) throw new Error(`Missing PDF source text: ${text}`);
+}
+
+if (!pkg.dependencies?.next || !pkg.dependencies?.react || !pkg.devDependencies?.tailwindcss) {
+  throw new Error('Expected Next.js, React, and Tailwind dependencies.');
+}
+
+if (!layout.includes('Software Engineer 2027 | Full-Stack, Backend & AI')) {
+  throw new Error('Missing 2027 new-grad engineering metadata.');
+}
+
+if (!page.includes('href="#incidentops"') || !page.includes('https://incidentops-public-demo.vercel.app')) {
+  throw new Error('IncidentOps evidence links missing from homepage.');
+}
+
+if (/Tyler\.cox66@yahoo\.com|tylercoxoh@gmail\.com/i.test(page + resume + layout)) {
+  throw new Error('Wrong contact email on active recruiter-facing pages.');
+}
+
+for (const relativePath of [
+  'index.html',
+  'resume.html',
+  'resume-source/Tyler-Cox-Resume.html',
+  'resume-source/Tyler-Cox-Resume-AI-Product.html',
+  'README.md',
+]) {
+  const source = fs.readFileSync(path.join(root, relativePath), 'utf8');
+  if (/Tyler\.cox66@yahoo\.com|tylercoxoh@gmail\.com/i.test(source)) {
+    throw new Error(`Outdated or unintended email in ${relativePath}`);
   }
 }
 
-for (const text of requiredText) {
-  if (!html.includes(text)) {
-    throw new Error(`Missing required text: ${text}`);
-  }
+if (/placeholder|lorem ipsum|Create Next App|Deploy Now/i.test(page + resume + pdfSource)) {
+  throw new Error('Found generic placeholder copy.');
 }
 
-if (!html.includes('Tyler Cox')) {
-  throw new Error('Missing personal name styling in snapshot.');
-}
-
-if (html.includes('View Code') || html.includes('View Demo') || html.includes('Code Link Placeholder') || html.includes('Demo Placeholder')) {
-  throw new Error('Project placeholder code/demo buttons should be removed.');
-}
-
-if (!html.includes('Gymst')) {
-  throw new Error('Missing Gymst featured project content.');
-}
-
-if (!html.includes('mailto:Tyler.cox66@yahoo.com')) {
-  throw new Error('Missing working mailto link.');
-}
-
-if (!html.includes('https://www.linkedin.com/in/tyler-cox-53b886406')) {
-  throw new Error('Missing working LinkedIn link.');
-}
-
-if (!html.includes('Interested in working together or learning more about my work? Feel free to reach out.')) {
-  throw new Error('Missing contact call to action.');
-}
-
-console.log('Portfolio smoke test passed.');
+console.log('Portfolio brand overhaul smoke test passed.');

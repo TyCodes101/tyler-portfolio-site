@@ -1,4 +1,41 @@
-# Tyler Cox Portfolio Site
+# Tyler Cox portfolio — current Next.js application
+
+The published portfolio uses React, TypeScript and Tailwind. This update preserves the cream, terracotta and sage homepage from `feature/ai-product-brand-overhaul`, plus the exact later resume/PDF changes from the previously deployed `resume-overhaul-2026` branch. The repository's older static `main` branch is not substituted for the published interface. Production now tracks `feature/ai-product-brand-overhaul`, which includes both histories.
+
+IncidentOPS is featured alongside the existing projects with an engineering summary, repository link and four real application screenshots. Its live link is shown only after the actual deployment passes acceptance. Existing project content, navigation, resume and visual language are preserved.
+
+## Current local startup and validation
+
+Use Node.js 22.12+ and npm:
+
+```sh
+npm ci
+npm run dev
+```
+
+Open http://localhost:3000. Production validation and startup:
+
+```sh
+npm test
+npm run lint
+npx tsc --noEmit
+npm run build
+npm run start
+```
+
+The GitHub Actions `portfolio` job runs these checks plus a runtime dependency audit. No API credentials or database configuration are needed for this static portfolio.
+
+## Dependency review
+
+The existing Next.js 16.2.6 dependency produced a critical advisory during this integration. Next.js and its ESLint configuration were updated to 16.4.2, and compatible transitive patches were applied. The resulting `npm audit --omit=dev` reports zero vulnerabilities at verification time.
+
+The full audit retains five high-severity development-only occurrences from the same `braces` → `micromatch` → `fast-glob` → Next ESLint plugin/config chain (GHSA-vfj7-8cjw-p6xm). The audit offers a breaking downgrade to ESLint config 14, not a compatible patched release. Linting uses trusted repository inputs; these packages are not part of the deployed runtime. No suppressions, forced downgrades or clean-full-audit claim are made.
+
+Screenshot provenance: [public/assets/incidentops/PROVENANCE.md](public/assets/incidentops/PROVENANCE.md). Public screenshots contain only fictional cases and synthetic test users.
+
+## Historical static-site notes
+
+The instructions below describe the older HTML implementation retained in this repository, rather than the current Next.js app.
 
 A recruiter-friendly personal portfolio built with plain HTML, CSS, and JavaScript.
 
@@ -34,6 +71,6 @@ This site is static, so it works well with:
 
 ## Contact info used on the site
 - Columbus, Ohio
-- Tyler.cox66@yahoo.com
+- cox.1644@osu.edu
 - LinkedIn: `tyler-cox-53b886406`
 - GitHub: `TyCodes101`
