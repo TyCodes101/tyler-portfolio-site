@@ -1,21 +1,25 @@
-# Tyler Cox portfolio — current Next.js application
+# Tyler Cox — portfolio
 
-The published portfolio uses React, TypeScript and Tailwind. This update preserves the cream, terracotta and sage homepage from `feature/ai-product-brand-overhaul`, plus the exact later resume/PDF changes from the previously deployed `resume-overhaul-2026` branch. The repository's older static `main` branch is not substituted for the published interface. Production now tracks `feature/ai-product-brand-overhaul`, which includes both histories.
+Next.js portfolio for Tyler's May 2027 Ohio State graduation and June/July 2027 availability. Live site: https://tyler-portfolio-site.vercel.app
 
-IncidentOPS is featured alongside the existing projects with an engineering summary, repository link and four real application screenshots. Its live link is shown only after the actual deployment passes acceptance. Existing project content, navigation, resume and visual language are preserved.
+## Current site
 
-## Current local startup and validation
+- Warm editorial design, responsive navigation, visible keyboard focus and reduced-motion support.
+- IncidentOPS case study with four original screenshots and documented provenance.
+- MacroMesh / Calorie Compass case study with its fixed offline benchmark clearly scoped.
+- CPU Scheduler Visualizer case study and a working scheduling sketch.
+- Updated online resume, unchanged approved PDF, live demos, repositories and direct contact.
+- Social sharing artwork, route metadata, sitemap and robots rules.
+
+Personal projects are distinct from campus employment. The approved PDF in `public/Tyler-Cox-Resume.pdf` retains SHA256 `057276b351f0600a6aed2bd76dc3e7d163f7703f7e289e3b5fd970641c36ec9d`.
+
+## Development
 
 Use Node.js 22.12+ and npm:
 
 ```sh
 npm ci
 npm run dev
-```
-
-Open http://localhost:3000. Production validation and startup:
-
-```sh
 npm test
 npm run lint
 npx tsc --noEmit
@@ -23,54 +27,12 @@ npm run build
 npm run start
 ```
 
-The GitHub Actions `portfolio` job runs these checks plus a runtime dependency audit. No API credentials or database configuration are needed for this static portfolio.
+Tests verify factual content, project links, the approved PDF checksum and scheduling behavior. Desktop/mobile browser review checks navigation, screenshot switching and scheduling interactions without Playwright. The runtime dependency audit passed with zero vulnerabilities during this update; this does not describe development dependencies.
 
-## Dependency review
+## Content and release
 
-The existing Next.js 16.2.6 dependency produced a critical advisory during this integration. Next.js and its ESLint configuration were updated to 16.4.2, and compatible transitive patches were applied. The resulting `npm audit --omit=dev` reports zero vulnerabilities at verification time.
+`src/app/page.tsx` contains the homepage; `content.ts` holds detailed resume content. `globals.css` defines the editorial layout. Small client components handle navigation, screenshot selection and the scheduling sketch. Site metadata and social sharing artwork live in `layout.tsx` and `opengraph-image.tsx`.
 
-The full audit retains five high-severity development-only occurrences from the same `braces` → `micromatch` → `fast-glob` → Next ESLint plugin/config chain (GHSA-vfj7-8cjw-p6xm). The audit offers a breaking downgrade to ESLint config 14, not a compatible patched release. Linting uses trusted repository inputs; these packages are not part of the deployed runtime. No suppressions, forced downgrades or clean-full-audit claim are made.
+See [screenshot provenance](public/assets/incidentops/PROVENANCE.md) and [design notes](DESIGN.md).
 
-Screenshot provenance: [public/assets/incidentops/PROVENANCE.md](public/assets/incidentops/PROVENANCE.md). Public screenshots contain only fictional cases and synthetic test users.
-
-## Historical static-site notes
-
-The instructions below describe the older HTML implementation retained in this repository, rather than the current Next.js app.
-
-A recruiter-friendly personal portfolio built with plain HTML, CSS, and JavaScript.
-
-## Included
-- `index.html` - main landing page with hero, competencies, experience, projects, resume, and contact sections
-- `styles.css` - responsive styling and dark theme
-- `script.js` - mobile navigation toggle and active section highlighting
-- `resume.html` - web version of the resume
-- `Tyler-Cox-Resume.pdf` - downloadable PDF resume
-- `assets/tyler-photo.png` - profile image used on the site
-- `tests/portfolio.test.js` - smoke test for key sections and text
-
-## Run locally
-
-```bash
-cd portfolio-site
-python3 -m http.server 8000
-```
-
-Open `http://127.0.0.1:8000`.
-
-## Verify
-
-```bash
-node tests/portfolio.test.js
-```
-
-## Publish
-This site is static, so it works well with:
-- GitHub Pages
-- Vercel
-- Netlify
-
-## Contact info used on the site
-- Columbus, Ohio
-- cox.1644@osu.edu
-- LinkedIn: `tyler-cox-53b886406`
-- GitHub: `TyCodes101`
+Historical HTML and resume-generation files remain in the repository. The active site uses `src/app` and the approved PDF in `public`; do not regenerate the approved PDF from historical sources. Deployment uses the existing Vercel project.
